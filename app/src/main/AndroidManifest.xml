@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.302Projecct2">
-        <activity android:name=".viewItemPage"></activity>
+        <activity android:name=".Homepage"></activity>
+        <activity android:name=".viewItemPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
