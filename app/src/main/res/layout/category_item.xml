@@ -24,13 +24,13 @@
                 android:id="@+id/txtCusine"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
+                android:gravity="center"
                 android:text="Cuisine"
                 android:textColor="@color/black"
-                android:gravity="center"
                 android:textSize="40sp"
-                app:layout_constraintStart_toEndOf="@id/imgFlag"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toEndOf="@+id/imgFlag"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
