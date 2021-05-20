@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecViewAdapter extends RecyclerView.Adapter<RecViewAdapter.MyViewHolder> {
+public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.MyViewHolder> {
 
     Context ctx;
 
-    public RecViewAdapter(Context ctx){
+    public ListActivityRecAdapter(Context ctx){
         this.ctx = ctx;
     }
 
