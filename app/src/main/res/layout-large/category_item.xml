@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:elevation="10dp"
+    app:cardElevation="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,8 +15,8 @@
 
             <ImageView
                 android:id="@+id/imgFlag"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -24,11 +24,12 @@
             <TextView
                 android:id="@+id/txtCusine"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:gravity="center"
                 android:text="Cuisine"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="45sp"
+                android:padding="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgFlag"
                 app:layout_constraintTop_toTopOf="parent" />
