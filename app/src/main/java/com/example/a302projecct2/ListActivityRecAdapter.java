@@ -1,6 +1,5 @@
 package com.example.a302projecct2;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.MyViewHolder> {
+public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.ListActivityViewHolder> {
 
-    Context ctx;
-    ItemClass[] items; 
+    private Context ctx;
+    private ItemClass[] items;
 
     public ListActivityRecAdapter(Context ctx, ItemClass[] items){
         this.ctx = ctx;
@@ -29,18 +28,18 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     //Inflating layout for each item within the RecyclerView
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(this.ctx);
         View view = inflater.inflate(R.layout.list_item, parent, false);
-        return new MyViewHolder(view);
+        return new ListActivityViewHolder(view);
     }
 
     //Binds the data to the layout that will be used for each item
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
         holder.txtItemName.setText(items[position].getItemName());
         holder.txtItemPrice.setText(items[position].getItemPrice());
-        Glide.with(ctx)
+        Glide.with(this.ctx)
                 .load(items[position].getItemImages()[0])
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgListItem);
@@ -67,13 +66,13 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     }
 
     //Connecting variables within here to components from the page
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ListActivityViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtItemName, txtItemPrice;
-        ImageView imgListItem;
-        CardView cvListItem;
+        private TextView txtItemName, txtItemPrice;
+        private ImageView imgListItem;
+        private CardView cvListItem;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public ListActivityViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtItemName = itemView.findViewById(R.id.txtItemName);

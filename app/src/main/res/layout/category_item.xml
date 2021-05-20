@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardViewProperties"
+    android:id="@+id/cvCategoryItem"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +16,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/txtCusine"
+                android:id="@+id/txtCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
