@@ -19,12 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+
 public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.ListActivityViewHolder> {
 
     private Context ctx;
-    private ItemClass[] items;
+    private com.example.a302projecct2.ItemClass[] items;
 
-    public ListActivityRecAdapter(Context ctx, ItemClass[] items){
+    public ListActivityRecAdapter(Context ctx, com.example.a302projecct2.ItemClass[] items){
         this.ctx = ctx;
         this.items = items;
     }

@@ -18,14 +18,15 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.bumptech.glide.Glide;
 
 public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.TopPicksViewHolder> {
 
-    private ItemClass[] topPickItems;
+    private com.example.a302projecct2.ItemClass[] topPickItems;
     private Context ctx;
 
-    public TopPicksRecAdapter(ItemClass[] topPickItems, Context ctx) {
+    public TopPicksRecAdapter(com.example.a302projecct2.ItemClass[] topPickItems, Context ctx) {
         this.topPickItems = topPickItems;
         this.ctx = ctx;
     }

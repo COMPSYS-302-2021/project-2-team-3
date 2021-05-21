@@ -1,4 +1,4 @@
-package com.example.a302projecct2;
+package com.example.a302projecct2.dataprovider;
 
 public class ItemClass {
 

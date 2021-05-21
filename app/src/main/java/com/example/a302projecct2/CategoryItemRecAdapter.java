@@ -20,15 +20,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.zip.Inflater;
 
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
 
     private Context ctx;
-    private ItemClass[][] items;
-    private CategoryClass[] categoryNames;
+    private com.example.a302projecct2.ItemClass[][] items;
+    private com.example.a302projecct2.CategoryClass[] categoryNames;
 
-    public CategoryItemRecAdapter(Context ctx, ItemClass[][] items, CategoryClass[] categoryNames) {
+    public CategoryItemRecAdapter(Context ctx, com.example.a302projecct2.ItemClass[][] items, com.example.a302projecct2.CategoryClass[] categoryNames) {
         this.ctx = ctx;
         this.items = items;
         this.categoryNames = categoryNames;
