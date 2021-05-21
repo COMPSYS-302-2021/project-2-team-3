@@ -1,8 +1,13 @@
 package com.example.a302projecct2;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,9 +57,14 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
         holder.cvCategoryItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Go to listactivity once an category has been selected
-
-                Intent intent = new Intent(ctx, ListActivity.class);
+                if(!isConnected()){
+                    showNotConnectedDialog();
+                }
+                else{
+                    Intent intent = new Intent(ctx, ListActivity.class);
+                    intent.putExtra("items", items[position]);
+                    ctx.startActivity(intent);
+                }
             }
         });
     }
@@ -77,5 +87,39 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
             txtCuisine = itemView.findViewById(R.id.txtCuisine);
             cvCategoryItem = itemView.findViewById(R.id.cvCategoryItem);
         }
+    }
+
+
+    //Check if device is connected a network
+    private boolean isConnected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager)ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        //Check if device is connected to internet
+        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    private void showNotConnectedDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+        builder.setMessage("Please connect to the internet to proceed")
+                .setCancelable(false)
+                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ctx.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                });
+        builder.show();
+
+
     }
 }
