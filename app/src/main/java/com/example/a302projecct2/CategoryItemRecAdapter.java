@@ -23,8 +23,10 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
     private ItemClass[][] items;
     private CategoryClass[] categoryNames;
 
-    public CategoryItemRecAdapter(Context ctx) {
+    public CategoryItemRecAdapter(Context ctx, ItemClass[][] items, CategoryClass[] categoryNames) {
         this.ctx = ctx;
+        this.items = items;
+        this.categoryNames = categoryNames;
     }
 
     @NonNull
@@ -52,7 +54,7 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
             public void onClick(View v) {
                 //Go to listactivity once an category has been selected
 
-                //Intent intent = new Intent(ctx, ListActivity.class);
+                Intent intent = new Intent(ctx, ListActivity.class);
             }
         });
     }
