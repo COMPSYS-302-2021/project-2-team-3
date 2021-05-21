@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardViewProperties"
+    android:id="@+id/cvTopPicks"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +21,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-
+                android:id="@+id/txtTopPicksName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img_top_picks"
