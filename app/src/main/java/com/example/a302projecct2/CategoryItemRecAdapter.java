@@ -20,6 +20,8 @@ import java.util.zip.Inflater;
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
 
     private Context ctx;
+    private ItemClass[][] items;
+    private CategoryClass[] categoryNames;
 
     public CategoryItemRecAdapter(Context ctx) {
         this.ctx = ctx;
@@ -37,13 +39,13 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
     public void onBindViewHolder(@NonNull CategoryItemRecAdapter.CategoryItemViewHolder holder, int position) {
 
         //For data provider make it make two arrays, one for itemCLass and one for categoryItems which will contain a link and text
-        //holder.txtCuisine.setText(/**Need to figure out how to have cateogry information and category items**/);
+        holder.txtCuisine.setText(categoryNames[position].getCategoryName());
 
 
-//        Glide.with(this.ctx)
-//                .load(/**Same issue as above**/)
-//                .placeholder(R.drawable.ic_launcher_background)
-//                .into(holder.imgFlag);
+        Glide.with(this.ctx)
+                .load(categoryNames[position].getImgFlag())
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(holder.imgFlag);
 
         holder.cvCategoryItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +59,7 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
 
     @Override
     public int getItemCount() {
-        return 0;
+        return categoryNames.length;
     }
 
     public class CategoryItemViewHolder extends RecyclerView.ViewHolder {
