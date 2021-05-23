@@ -23,10 +23,10 @@ import com.bumptech.glide.Glide;
 
 public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.TopPicksViewHolder> {
 
-    private com.example.a302projecct2.ItemClass[] topPickItems;
+    private com.example.a302projecct2.dataprovider.ItemClass[] topPickItems;
     private Context ctx;
 
-    public TopPicksRecAdapter(com.example.a302projecct2.ItemClass[] topPickItems, Context ctx) {
+    public TopPicksRecAdapter(com.example.a302projecct2.dataprovider.ItemClass[] topPickItems, Context ctx) {
         this.topPickItems = topPickItems;
         this.ctx = ctx;
     }

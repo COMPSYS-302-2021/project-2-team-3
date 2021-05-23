@@ -24,10 +24,10 @@ import com.bumptech.glide.Glide;
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
 
     private Context ctx;
-    private com.example.a302projecct2.ItemClass[][] items;
-    private com.example.a302projecct2.CategoryClass[] categoryNames;
+    private com.example.a302projecct2.dataprovider.ItemClass[][] items;
+    private com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames;
 
-    public CategoryItemRecAdapter(Context ctx, com.example.a302projecct2.ItemClass[][] items, com.example.a302projecct2.CategoryClass[] categoryNames) {
+    public CategoryItemRecAdapter(Context ctx, com.example.a302projecct2.dataprovider.ItemClass[][] items, com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames) {
         this.ctx = ctx;
         this.items = items;
         this.categoryNames = categoryNames;

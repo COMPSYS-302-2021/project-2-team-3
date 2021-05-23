@@ -33,7 +33,7 @@ public class DataProviderClass {
 
 
         //Maybe try for loops to store data, need size of array for each item
-        String[] japaneseDishNames = ac.getResources().getStringArray(R.array.japanese_dishes);
+        //String[] japaneseDishNames = ac.getResources().getStringArray(R.array.japanese_dishes);
 
 
 
