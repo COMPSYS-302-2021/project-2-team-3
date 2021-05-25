@@ -2,49 +2,52 @@
     <!-- TODO: Change app_name to something else later -->
     <string name="app_name">302Projecct2</string>
 
-    <string-array name="japanese_dishes_name">
-        <item>Sushi</item>
-    </string-array>
 
-<!--    <string-array name="japanese_dishes">-->
-<!--        <string-array name="dishName">-->
-<!--            <item>Sushi</item>-->
-<!--            <item>Ramen</item>-->
-<!--            <item>Tempura</item>-->
-<!--            <item>Okonomiyaki</item>-->
-<!--            <item>Gyudon</item>-->
-<!--            <item>Miso soup</item>-->
-<!--            <item>Yakitori</item>-->
-<!--            <item>Onigiri</item>-->
-<!--            <item>Udon</item>-->
-<!--            <item>Omurice</item>-->
-<!--        </string-array>-->
+    <string-array name="japanese_dishes">
+        <item>
+            <string-array name="dishName">
+                <item>Sushi</item>
+                <item>Ramen</item>
+                <item>Tempura</item>
+                <item>Okonomiyaki</item>
+                <item>Gyudon</item>
+                <item>Miso soup</item>
+                <item>Yakitori</item>
+                <item>Onigiri</item>
+                <item>Udon</item>
+                <item>Omurice</item>
+            </string-array>
+        </item>
 
-<!--        <string-array name="dishDescription">-->
-<!--            <item>A piece of rice seasoned with a rice vinegar mix (made with sugar and salt) mixed with different ingredients - a variety of fishes, vegetables and nori (seaweed)</item>-->
-<!--            <item>A wheat noodles bowl served in a soy sauce or miso soup, topped with green onion, slices of pork, egg and seaweed</item>-->
-<!--            <item>A dish consisting of shrimp, fish, vegetables, etc. dipped in an egg batter, deep-fried to produce a light, crisp crust, and served with a piquant dipping sauce. </item>-->
-<!--            <item>A pan-fried dish that consists of batter and cabbage. Selected toppings and ingredients are added which can vary greatly, anything from meat and seafood to wasabi and cheese.</item>-->
-<!--            <item>A donburi dish consisting of beef and onion served over a bowl of rice. The meat and onion are cooked in a mixture of soy sauce, mirin, sugar and sake giving the dish a sweet, salty flavour.</item>-->
-<!--            <item>A traditional Japanese soup consisting of a dashi stock into which softened miso paste is mixed.</item>-->
-<!--            <item>Grilled chicken skewers made from bite sized pieces of meat from all different parts of the chicken, such as the breasts, thighs, skin, liver and other innards.</item>-->
-<!--            <item>A  rice ball usually triangle shaped, or oval shaped wrapped in a nori leaf. Usually filled with fried salmon, umeboshi, katsuobushi, or any other type of salty or sour ingredient.</item>-->
-<!--            <item>A thick noodle made from wheat flour, used in Japanese cuisine. Served in a mild broth made from dashi, soy sauce and mirin</item>-->
-<!--            <item>A western dish which was adapted to fit the Japanese taste, it consist of an omelet with fried rice</item>-->
-<!--        </string-array>-->
+        <item>
+            <string-array name="dishDescription">
+                <item>A piece of rice seasoned with a rice vinegar mix (made with sugar and salt) mixed with different ingredients - a variety of fishes, vegetables and nori (seaweed)</item>
+                <item>A wheat noodles bowl served in a soy sauce or miso soup, topped with green onion, slices of pork, egg and seaweed</item>
+                <item>A dish consisting of shrimp, fish, vegetables, etc. dipped in an egg batter, deep-fried to produce a light, crisp crust, and served with a piquant dipping sauce. </item>
+                <item>A pan-fried dish that consists of batter and cabbage. Selected toppings and ingredients are added which can vary greatly, anything from meat and seafood to wasabi and cheese.</item>
+                <item>A donburi dish consisting of beef and onion served over a bowl of rice. The meat and onion are cooked in a mixture of soy sauce, mirin, sugar and sake giving the dish a sweet, salty flavour.</item>
+                <item>A traditional Japanese soup consisting of a dashi stock into which softened miso paste is mixed.</item>
+                <item>Grilled chicken skewers made from bite sized pieces of meat from all different parts of the chicken, such as the breasts, thighs, skin, liver and other innards.</item>
+                <item>A  rice ball usually triangle shaped, or oval shaped wrapped in a nori leaf. Usually filled with fried salmon, umeboshi, katsuobushi, or any other type of salty or sour ingredient.</item>
+                <item>A thick noodle made from wheat flour, used in Japanese cuisine. Served in a mild broth made from dashi, soy sauce and mirin</item>
+                <item>A western dish which was adapted to fit the Japanese taste, it consist of an omelet with fried rice</item>
+            </string-array>
+        </item>
 
-<!--        <string-array name="dishPrice">-->
-<!--            <item>$6</item>-->
-<!--            <item>$12</item>-->
-<!--            <item>$6</item>-->
-<!--            <item>$5.50</item>-->
-<!--            <item>$4.50</item>-->
-<!--            <item>$3</item>-->
-<!--            <item>$1</item>-->
-<!--            <item>$1.50</item>-->
-<!--            <item>$10</item>-->
-<!--            <item>$15</item>-->
-<!--        </string-array>-->
+        <item>
+            <string-array name="dishPrice">
+                <item>$6</item>
+                <item>$12</item>
+                <item>$6</item>
+                <item>$5.50</item>
+                <item>$4.50</item>
+                <item>$3</item>
+                <item>$1</item>
+                <item>$1.50</item>
+                <item>$10</item>
+                <item>$15</item>
+            </string-array>
+        </item>
 
 <!--        <string-array name="dishImages">-->
 <!--            <string-array name = "sushi_imgs">-->
@@ -107,8 +110,19 @@
 <!--                <item>https://photo2.foodgawker.com/wp-content/uploads/2018/01/3145908.jpg</item>-->
 <!--            </string-array>-->
 <!--        </string-array>-->
-<!--        -->
-<!--    </string-array>-->
+
+    </string-array>
+
+   <string-array name="a">
+       <item>a</item>
+       <item>b</item>
+       <item>c</item>
+       <item>d</item>
+       <item>e</item>
+       <item>f</item>
+   </string-array>
+
+
 
 
 </resources>
