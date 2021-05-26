@@ -22,38 +22,30 @@ import java.util.stream.Stream;
 
 public class DataProviderClass {
 
-    private CategoryClass[] cuisines;
-    //ItemClass[][] allItems;
+    private CategoryClass[] cuisinesCategories;
     private ArrayList<ItemClass[]> allDishes;
+    private String[] cusines = {"japanese_dishes", "italian_dishes", "indian_dishes"};
 
 
     public DataProviderClass(Context ctx) {
-
-        //Allows us to use getResources function
-        AppCompatActivity ac = new AppCompatActivity();
-
-        //TODO: Assign values and create dataset for both categories and items
-        cuisines = new CategoryClass[]{
+        cuisinesCategories = new CategoryClass[]{
                 new CategoryClass("Japanese", "https://cdn.icon-icons.com/icons2/230/PNG/256/Japan_JP_JPN_392_Flag1_26102.png"),
                 new CategoryClass("Indian", "https://cdn.icon-icons.com/icons2/2087/PNG/512/india_icon_127891.png"),
                 new CategoryClass("Italian", "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Italy-Flag-icon.png")
         };
 
+        //Saving all of the arrays of cusines into one array list
+        for(int i=0; i<cusines.length; i++){
+            allDishes.add(generateData(ctx, cusines[i]));
+        }
+    }
 
-        //Maybe try for loops to store data, need size of array for each item
-        //String[] japaneseDishNames = ac.getResources().getStringArray(R.array.japanese_dishes);
-        ItemClass[] japaneseDishes = generateData(ctx, "japanese_dishes");
-        ItemClass[] italianDishes = generateData(ctx, "italian_dishes");
-        ItemClass[] indianDishes = generateData(ctx, "indian_dishes");
+    public CategoryClass[] getCusinesCategories(){
+        return this.cuisinesCategories;
+    }
 
-
-
-
-
-
-
-
-
+    public  ArrayList<ItemClass[]> getAllDishes(){
+        return this.allDishes;
     }
 
 
