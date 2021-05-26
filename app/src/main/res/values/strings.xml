@@ -49,80 +49,78 @@
             </string-array>
         </item>
 
-<!--        <string-array name="dishImages">-->
-<!--            <string-array name = "sushi_imgs">-->
-<!--                <item>https://www.myketokitchen.com/wp-content/uploads/2020/07/Keto-Sushi-Rolls-Recipe-.jpg</item>-->
-<!--                <item>https://www.4ingredients.com.au/wp-content/uploads/2018/07/4I-Sushi-sml.jpg</item>-->
-<!--                <item>https://tul.imgix.net/content/article/best-sushi-auckland.jpg</item>-->
-<!--            </string-array>-->
+        <!--        <string-array name="dishImages">-->
+        <!--            <string-array name = "sushi_imgs">-->
+        <!--                <item>https://www.myketokitchen.com/wp-content/uploads/2020/07/Keto-Sushi-Rolls-Recipe-.jpg</item>-->
+        <!--                <item>https://www.4ingredients.com.au/wp-content/uploads/2018/07/4I-Sushi-sml.jpg</item>-->
+        <!--                <item>https://tul.imgix.net/content/article/best-sushi-auckland.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "ramen_imgs">-->
-<!--                <item>https://glebekitchen.com/wp-content/uploads/2017/04/tonkotsuramenfront.jpg</item>-->
-<!--                <item>https://www.thedenizen.co.nz/wp-content/uploads/2020/07/FEATURE-IMAGE-ramen.jpg</item>-->
-<!--                <item>https://www.theflavorbender.com/wp-content/uploads/2019/01/Easy-Chicken-Ramen-Featured-500x375.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "ramen_imgs">-->
+        <!--                <item>https://glebekitchen.com/wp-content/uploads/2017/04/tonkotsuramenfront.jpg</item>-->
+        <!--                <item>https://www.thedenizen.co.nz/wp-content/uploads/2020/07/FEATURE-IMAGE-ramen.jpg</item>-->
+        <!--                <item>https://www.theflavorbender.com/wp-content/uploads/2019/01/Easy-Chicken-Ramen-Featured-500x375.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "tempura_imgs">-->
-<!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/tempura-876567-790c303caabb006fb951ea3d.jpg</item>-->
-<!--                <item>https://i.pinimg.com/originals/ec/c7/44/ecc744d15abb388c55a4610b7c3d1fd2.jpg</item>-->
-<!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/shrimp-tempura-2352862.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "tempura_imgs">-->
+        <!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/tempura-876567-790c303caabb006fb951ea3d.jpg</item>-->
+        <!--                <item>https://i.pinimg.com/originals/ec/c7/44/ecc744d15abb388c55a4610b7c3d1fd2.jpg</item>-->
+        <!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/shrimp-tempura-2352862.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "Okonomiyaki_imgs">-->
-<!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/okonomiyaki-with-miyazakigyu-w-a7e0b9.jpg</item>-->
-<!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/japanese-pork-fried-rice-omelette-with-okonomiyaki-sauce-omurice-reci...-1968997.jpg</item>-->
-<!--                <item>https://media-cdn.tripadvisor.com/media/photo-s/14/71/a4/db/okonomiyaki.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "Okonomiyaki_imgs">-->
+        <!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/okonomiyaki-with-miyazakigyu-w-a7e0b9.jpg</item>-->
+        <!--                <item>https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/japanese-pork-fried-rice-omelette-with-okonomiyaki-sauce-omurice-reci...-1968997.jpg</item>-->
+        <!--                <item>https://media-cdn.tripadvisor.com/media/photo-s/14/71/a4/db/okonomiyaki.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "Gyudon_imgs">-->
-<!--                <item>https://www.chopstickchronicles.com/wp-content/uploads/2016/01/Gyudon-Update-23-500x500.jpg</item>-->
-<!--                <item>https://img-global.cpcdn.com/recipes/b860910f2fc4873c/400x400cq70/photo.jpg</item>-->
-<!--                <item>https://thewoksoflife.com/wp-content/uploads/2016/02/gyudon-9-1-500x500.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "Gyudon_imgs">-->
+        <!--                <item>https://www.chopstickchronicles.com/wp-content/uploads/2016/01/Gyudon-Update-23-500x500.jpg</item>-->
+        <!--                <item>https://img-global.cpcdn.com/recipes/b860910f2fc4873c/400x400cq70/photo.jpg</item>-->
+        <!--                <item>https://thewoksoflife.com/wp-content/uploads/2016/02/gyudon-9-1-500x500.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "miso_soup_imgs">-->
-<!--                <item>https://www.lowcarbingasian.com/wp-content/uploads/2019/06/Traditional-Japanese-Miso-Soup-LowCarbingAsian-Cover.jpg</item>-->
-<!--                <item>https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F9bc1a1000b9b517a428335bd9d3f471e1228ad2b</item>-->
-<!--                <item>https://i0.wp.com/www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "miso_soup_imgs">-->
+        <!--                <item>https://www.lowcarbingasian.com/wp-content/uploads/2019/06/Traditional-Japanese-Miso-Soup-LowCarbingAsian-Cover.jpg</item>-->
+        <!--                <item>https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F9bc1a1000b9b517a428335bd9d3f471e1228ad2b</item>-->
+        <!--                <item>https://i0.wp.com/www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "yakitori_imgs">-->
-<!--                <item>https://www.seriouseats.com/thmb/eGj5y4jNzg09PM0BHxTyPv9jwRE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__06__20160606-yakitori-negima-13-61803f895fdc4c138f56e09dbc24648f.jpg</item>-->
-<!--                <item>https://www.jessicagavin.com/wp-content/uploads/2015/05/chicken-yakitori-1200.jpg</item>-->
-<!--                <item>https://media-cdn.tripadvisor.com/media/photo-s/06/91/0a/f6/ken-yakitori-bar.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "yakitori_imgs">-->
+        <!--                <item>https://www.seriouseats.com/thmb/eGj5y4jNzg09PM0BHxTyPv9jwRE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__06__20160606-yakitori-negima-13-61803f895fdc4c138f56e09dbc24648f.jpg</item>-->
+        <!--                <item>https://www.jessicagavin.com/wp-content/uploads/2015/05/chicken-yakitori-1200.jpg</item>-->
+        <!--                <item>https://media-cdn.tripadvisor.com/media/photo-s/06/91/0a/f6/ken-yakitori-bar.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "onigiri_imgs">-->
-<!--                <item>https://www.verywellfit.com/thmb/hFgTnX6fHSYk2OMUj7jFl5r0jeE=/853x853/smart/filters:no_upscale()/Low-FODMAPOnigiriRecipe_Catsos-59ca84af9abed5001116e75b-59cd1f90c4124400103a734f.jpg</item>-->
-<!--                <item>https://allwaysdelicious.com/wp-content/uploads/2012/12/onigiri-hero-1-720x720.jpg</item>-->
-<!--                <item>https://www.wandercooks.com/wp-content/uploads/2020/09/easy-onigiri-recipe-1.jpg</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "onigiri_imgs">-->
+        <!--                <item>https://www.verywellfit.com/thmb/hFgTnX6fHSYk2OMUj7jFl5r0jeE=/853x853/smart/filters:no_upscale()/Low-FODMAPOnigiriRecipe_Catsos-59ca84af9abed5001116e75b-59cd1f90c4124400103a734f.jpg</item>-->
+        <!--                <item>https://allwaysdelicious.com/wp-content/uploads/2012/12/onigiri-hero-1-720x720.jpg</item>-->
+        <!--                <item>https://www.wandercooks.com/wp-content/uploads/2020/09/easy-onigiri-recipe-1.jpg</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "udon_imgs">-->
-<!--                <item>https://www.wandercooks.com/wp-content/uploads/2019/04/udon-noodle-soup-recipe-ft-500x500.jpg</item>-->
-<!--                <item>https://familystylefood.com/wp-content/uploads/2020/09/udon-ratatouille.jpg</item>-->
-<!--                <item>https://minikitchenlab.com/wp-content/uploads/2018/08/Udon-Soup-e1534651596965-1300x1300.png</item>-->
-<!--            </string-array>-->
+        <!--            <string-array name = "udon_imgs">-->
+        <!--                <item>https://www.wandercooks.com/wp-content/uploads/2019/04/udon-noodle-soup-recipe-ft-500x500.jpg</item>-->
+        <!--                <item>https://familystylefood.com/wp-content/uploads/2020/09/udon-ratatouille.jpg</item>-->
+        <!--                <item>https://minikitchenlab.com/wp-content/uploads/2018/08/Udon-Soup-e1534651596965-1300x1300.png</item>-->
+        <!--            </string-array>-->
 
-<!--            <string-array name = "omurice_imgs">-->
-<!--                <item>https://www.196flavors.com/wp-content/uploads/2019/11/omurice-3-FP.jpg</item>-->
-<!--                <item>https://i.pinimg.com/originals/df/72/bd/df72bd95b490b0b5f03e80eeed76a6fd.jpg</item>-->
-<!--                <item>https://photo2.foodgawker.com/wp-content/uploads/2018/01/3145908.jpg</item>-->
-<!--            </string-array>-->
-<!--        </string-array>-->
+        <!--            <string-array name = "omurice_imgs">-->
+        <!--                <item>https://www.196flavors.com/wp-content/uploads/2019/11/omurice-3-FP.jpg</item>-->
+        <!--                <item>https://i.pinimg.com/originals/df/72/bd/df72bd95b490b0b5f03e80eeed76a6fd.jpg</item>-->
+        <!--                <item>https://photo2.foodgawker.com/wp-content/uploads/2018/01/3145908.jpg</item>-->
+        <!--            </string-array>-->
+        <!--        </string-array>-->
 
     </string-array>
 
-   <string-array name="a">
-       <item>a</item>
-       <item>b</item>
-       <item>c</item>
-       <item>d</item>
-       <item>e</item>
-       <item>f</item>
-   </string-array>
-
-
+    <string-array name="a">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+        <item>f</item>
+    </string-array>
 
 
 </resources>
