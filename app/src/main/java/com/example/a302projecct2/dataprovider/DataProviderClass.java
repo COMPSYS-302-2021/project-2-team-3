@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class DataProviderClass {
@@ -25,8 +26,19 @@ public class DataProviderClass {
                 new CategoryClass("Indian", "https://cdn.icon-icons.com/icons2/2087/PNG/512/india_icon_127891.png"),
                 new CategoryClass("Italian", "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Italy-Flag-icon.png")
         };
-
+        allDishes = new ArrayList<ArrayList<ItemClass>>();
         ArrayList<ItemClass> japanese = generateData(ctx, "japanese_dishes");
+//        ArrayList<ItemClass> indian = generateData(ctx, "indian_dishes");
+//        ArrayList<ItemClass> italian = generateData(ctx, "italian_dishes");
+        System.out.println("japanese: " + japanese.size());
+//        System.out.println("indian: " + indian.size());
+//        System.out.println("italian: " + italian.size());
+
+
+        //Adding data is the issue
+        allDishes.add(japanese);
+//        allDishes.add(indian);
+//        allDishes.add(italian);
 
         //Saving all of the arrays of cusines into one array list
 //        for(int i=0; i<cusines.length; i++){
@@ -112,7 +124,6 @@ public class DataProviderClass {
             e.printStackTrace();
         }
 
-        //Error on this line, cannot type cast like this
         return dishes;
     }
 
