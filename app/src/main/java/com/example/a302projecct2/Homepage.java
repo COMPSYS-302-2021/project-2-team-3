@@ -1,6 +1,8 @@
 package com.example.a302projecct2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -24,8 +26,10 @@ public class Homepage extends AppCompatActivity {
         viewholder vh = new viewholder();
 
         DataProviderClass data = new DataProviderClass(getBaseContext());
+
         TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
         CategoryItemRecAdapter CatRecAdapter = new CategoryItemRecAdapter(getBaseContext(),data.getAllDishes(),data.getCusinesCategories());
+
         vh.RclTopDishes.setAdapter(TopPicksAdapter);
         LinearLayoutManager TopDishesManager = new LinearLayoutManager(this);
         TopDishesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -37,6 +41,15 @@ public class Homepage extends AppCompatActivity {
         LinearLayoutManager CategoriesManager= new LinearLayoutManager(this);
         CategoriesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclCategories.setLayoutManager(CategoriesManager);
+
+        vh.SearchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchQuery = vh.SearchBarTxt.getText().toString();
+                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+                intent.putExtra("searchQuery", searchQuery);
+            }
+        });
     }
 
 }
