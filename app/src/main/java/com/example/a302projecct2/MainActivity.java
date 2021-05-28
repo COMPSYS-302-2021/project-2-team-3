@@ -1,10 +1,10 @@
 package com.example.a302projecct2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,17 +13,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        btn = findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String[] info = getResources().getStringArray(R.array.a);
-//                String item = info[0];
-                System.out.println(info[0]);
-                System.out.println(info[0].getClass().getSimpleName());
-            }
-        });
+
+        Intent intent  = new Intent(this, Homepage.class);
+        startActivity(intent);
+
+//        btn = findViewById(R.id.btn);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String[] info = getResources().getStringArray(R.array.a);
+////                String item = info[0];
+//                System.out.println(info[0]);
+//                System.out.println(info[0].getClass().getSimpleName());
+//            }
+//        });
     }
 }

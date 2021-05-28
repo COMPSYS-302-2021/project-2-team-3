@@ -19,15 +19,18 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.a302projecct2.dataprovider.ItemClass;
+
+import java.util.ArrayList;
 
 
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
 
     private Context ctx;
-    private com.example.a302projecct2.dataprovider.ItemClass[][] items;
+    private ArrayList<ItemClass[]> items;
     private com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames;
 
-    public CategoryItemRecAdapter(Context ctx, com.example.a302projecct2.dataprovider.ItemClass[][] items, com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames) {
+    public CategoryItemRecAdapter(Context ctx, ArrayList<ItemClass[]> items, com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames) {
         this.ctx = ctx;
         this.items = items;
         this.categoryNames = categoryNames;
@@ -61,7 +64,7 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                 }
                 else{
                     Intent intent = new Intent(ctx, ListActivity.class);
-                    intent.putExtra("items", items[position]);
+                    intent.putExtra("items", items.get(position));
                     ctx.startActivity(intent);
                 }
             }
