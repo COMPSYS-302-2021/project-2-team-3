@@ -26,12 +26,15 @@ public class DataProviderClass {
                 new CategoryClass("Italian", "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Italy-Flag-icon.png")
         };
 
-//        //Saving all of the arrays of cusines into one array list
+        ArrayList<ItemClass> japanese = generateData(ctx, "japanese_dishes");
+
+        //Saving all of the arrays of cusines into one array list
 //        for(int i=0; i<cusines.length; i++){
 //            if(generateData(ctx, cusines[i]) == null){
 //                System.out.println("Value is null");
 //            }
-//            allDishes.add(generateData(ctx, cusines[i]));
+//            System.out.println((generateData(ctx, cusines[i])).toString());
+//            allDishes.add(generateData(ctx, cusines[i])); //Issue here
 //        }
     }
 
