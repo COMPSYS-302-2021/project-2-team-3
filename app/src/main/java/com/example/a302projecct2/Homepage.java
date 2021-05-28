@@ -2,6 +2,7 @@ package com.example.a302projecct2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,6 +54,7 @@ public class Homepage extends AppCompatActivity {
                 String searchQuery = vh.SearchBarTxt.getText().toString();
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
                 intent.putExtra("searchQuery", searchQuery);
+                intent.putExtra("data", (Parcelable) data);
             }
         });
     }

@@ -1,8 +1,14 @@
 package com.example.a302projecct2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.a302projecct2.dataprovider.DataProviderClass;
 import com.example.a302projecct2.dataprovider.ItemClass;
@@ -16,14 +22,20 @@ public class SearchActivity extends AppCompatActivity {
     private DataProviderClass data;
     private ArrayList<ItemClass> searchResults;
 
+    public class searchViewHolder{
+        private TextView txtSearch = findViewById(R.id.txtSearch);
+        private RecyclerView RclSearch = findViewById(R.id.RclSearch);
+    }
 
 
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
+        searchViewHolder vh = new searchViewHolder();
 
         //Constructor takes in search term and we create instance of dataprovider and search through all
         //the names to find the dish that we are looking for whatever matches then save them in a array
@@ -43,10 +55,16 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
-        //If the length of searchResults is 0 then show textview saying "No Search Results"
-        //and set recycler view as gone, otherwise set textxview to gone and show results
-        //Can maybe use same recyclerview adapter from list activity
-
+        if(searchResults.size() == 0){
+            vh.txtSearch.setText("No search results for \n" + searchQuery);
+        }
+        else{
+            ListActivityRecAdapter searchAdapter = new ListActivityRecAdapter(getBaseContext(), searchResults);
+            vh.RclSearch.setAdapter(searchAdapter);
+            LinearLayoutManager SearchManager= new LinearLayoutManager(this);
+            SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
+            vh.RclSearch.setLayoutManager(SearchManager);
+        }
 
 
 
