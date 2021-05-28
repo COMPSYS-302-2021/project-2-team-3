@@ -15,7 +15,7 @@ import java.util.List;
 public class DataProviderClass {
 
     private CategoryClass[] cuisinesCategories;
-    private ArrayList<ItemClass[]> allDishes;
+    private ArrayList<ArrayList<ItemClass>> allDishes;
     private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
 
 
@@ -26,10 +26,13 @@ public class DataProviderClass {
                 new CategoryClass("Italian", "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Italy-Flag-icon.png")
         };
 
-        //Saving all of the arrays of cusines into one array list
-        for(int i=0; i<cusines.length; i++){
-            allDishes.add(generateData(ctx, cusines[i]));
-        }
+//        //Saving all of the arrays of cusines into one array list
+//        for(int i=0; i<cusines.length; i++){
+//            if(generateData(ctx, cusines[i]) == null){
+//                System.out.println("Value is null");
+//            }
+//            allDishes.add(generateData(ctx, cusines[i]));
+//        }
     }
 
     //Randomly generate top dishes
@@ -39,7 +42,7 @@ public class DataProviderClass {
 
         //Save item from each cusine into one array for top picks
         for(int i=0; i<allDishes.size(); i++){
-            topDishes[i] = allDishes.get(i)[pos];
+            topDishes[i] = allDishes.get(i).get(pos);
         }
         return topDishes;
 
@@ -49,19 +52,20 @@ public class DataProviderClass {
         return this.cuisinesCategories;
     }
 
-    public  ArrayList<ItemClass[]> getAllDishes(){
+    public  ArrayList<ArrayList<ItemClass>> getAllDishes(){
         return this.allDishes;
     }
 
     //Gets the longest array of food items
-    public int getLongestArrayVal(ArrayList<ItemClass[]> arr){
+    public int getLongestArrayVal(ArrayList<ArrayList<ItemClass>> arr){
         int[] lengths = new int[arr.size()];
-        for(int i=0; i<arr.size(); i++){
-            lengths[i] = arr.get(i).length;
+        for (int i=0; i<arr.size(); i++){
+            lengths[i] = arr.get(i).size();
         }
-
         Arrays.sort(lengths);
         return lengths[lengths.length - 1];
+
+
     }
 
 
@@ -83,9 +87,9 @@ public class DataProviderClass {
     }
 
     //Function is called to get the cuisine information we want
-    public ItemClass[] generateData(Context ctx, String cusine){
+    public ArrayList<ItemClass> generateData(Context ctx, String cusine){
 
-        List<ItemClass> dishes = new ArrayList<ItemClass>();
+        ArrayList<ItemClass> dishes = new ArrayList<ItemClass>();
         try {
             JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
             JSONArray array = obj.getJSONArray(cusine);
@@ -105,7 +109,8 @@ public class DataProviderClass {
             e.printStackTrace();
         }
 
-        return (ItemClass[]) dishes.toArray();
+        //Error on this line, cannot type cast like this
+        return dishes;
     }
 
     //Used to convert JSONArray of images to a String array

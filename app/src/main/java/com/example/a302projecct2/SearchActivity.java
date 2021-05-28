@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity {
 
     private String searchQuery;
-    private ArrayList<ItemClass[]> allDishes;
+    private ArrayList<ArrayList<ItemClass>> allDishes;
     private DataProviderClass data;
     private ArrayList<ItemClass> searchResults;
 
@@ -35,7 +35,7 @@ public class SearchActivity extends AppCompatActivity {
         //Search through all dishes to find dish that contains that name
         //Maybe add a field that contains an array of "tags" for each item
         for(int i = 0; i<allDishes.size(); i++){
-            ItemClass[] cuisine = allDishes.get(i);
+            ArrayList<ItemClass> cuisine = allDishes.get(i);
             for (ItemClass itemClass : cuisine) {
                 if (itemClass.getItemName().contains(searchQuery)) {
                     searchResults.add(itemClass);

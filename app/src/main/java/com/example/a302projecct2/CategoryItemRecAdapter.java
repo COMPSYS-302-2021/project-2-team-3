@@ -27,10 +27,10 @@ import java.util.ArrayList;
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
 
     private Context ctx;
-    private ArrayList<ItemClass[]> items;
+    private ArrayList<ArrayList<ItemClass>> items;
     private com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames;
 
-    public CategoryItemRecAdapter(Context ctx, ArrayList<ItemClass[]> items, com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames) {
+    public CategoryItemRecAdapter(Context ctx, ArrayList<ArrayList<ItemClass>> items, com.example.a302projecct2.dataprovider.CategoryClass[] categoryNames) {
         this.ctx = ctx;
         this.items = items;
         this.categoryNames = categoryNames;

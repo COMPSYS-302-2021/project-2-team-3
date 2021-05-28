@@ -24,15 +24,17 @@ public class Homepage extends AppCompatActivity {
         viewholder vh = new viewholder();
 
         DataProviderClass data = new DataProviderClass(getBaseContext());
-        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
+//        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
         CategoryItemRecAdapter CatRecAdapter = new CategoryItemRecAdapter(getBaseContext(),data.getAllDishes(),data.getCusinesCategories());
-        vh.RclTopDishes.setAdapter(TopPicksAdapter);
-        LinearLayoutManager TopDishesManager = new LinearLayoutManager(this);
-        TopDishesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        vh.RclTopDishes.setLayoutManager(TopDishesManager);
-        vh.RclCategories.setAdapter(TopPicksAdapter);
+//        vh.RclTopDishes.setAdapter(TopPicksAdapter);
+//        LinearLayoutManager TopDishesManager = new LinearLayoutManager(this);
+//        TopDishesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        vh.RclTopDishes.setLayoutManager(TopDishesManager);
+        vh.RclCategories.setAdapter(CatRecAdapter);
+
+
         LinearLayoutManager CategoriesManager= new LinearLayoutManager(this);
-        CategoriesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        CategoriesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclCategories.setLayoutManager(CategoriesManager);
     }
 

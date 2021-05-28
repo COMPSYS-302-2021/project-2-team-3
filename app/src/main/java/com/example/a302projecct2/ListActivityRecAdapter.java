@@ -18,14 +18,17 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.a302projecct2.dataprovider.ItemClass;
+
+import java.util.ArrayList;
 
 
 public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.ListActivityViewHolder> {
 
     private Context ctx;
-    private com.example.a302projecct2.dataprovider.ItemClass[] items;
+    private ArrayList <ItemClass> items;
 
-    public ListActivityRecAdapter(Context ctx, com.example.a302projecct2.dataprovider.ItemClass[] items){
+    public ListActivityRecAdapter(Context ctx, ArrayList<ItemClass> items){
         this.ctx = ctx;
         this.items = items;
     }
@@ -43,10 +46,10 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     //Binds the data to the layout that will be used for each item
     @Override
     public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
-        holder.txtItemName.setText(items[position].getItemName());
-        holder.txtItemPrice.setText(items[position].getItemPrice());
+        holder.txtItemName.setText(items.get(position).getItemName());
+        holder.txtItemPrice.setText(items.get(position).getItemPrice());
         Glide.with(this.ctx)
-                .load(items[position].getItemImages()[0])
+                .load(items.get(position).getItemImages()[0])
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgListItem);
 
@@ -60,9 +63,9 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                 else{
 
                     Intent intent = new Intent(ctx, viewItemPage.class);
-                    intent.putExtra("itemName",items[position].getItemName());
-                    intent.putExtra("itemPrice",items[position].getItemPrice());
-                    intent.putExtra("itemDescription",items[position].getItemDescription());
+                    intent.putExtra("itemName",items.get(position).getItemName());
+                    intent.putExtra("itemPrice",items.get(position).getItemPrice());
+                    intent.putExtra("itemDescription",items.get(position).getItemDescription());
                     ctx.startActivity(intent);
 
                 }
@@ -77,7 +80,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     @Override
     //Used to return the number of items that would be displayed
     public int getItemCount() {
-        return items.length;
+        return items.size();
     }
 
     //Connecting variables within here to components from the page
