@@ -25,23 +25,28 @@ public class Homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         viewholder vh = new viewholder();
 
+        //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
 
+        //Creating recycler view adapters for top dishes and category items
         TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
         CategoryItemRecAdapter CatRecAdapter = new CategoryItemRecAdapter(getBaseContext(),data.getAllDishes(),data.getCusinesCategories());
 
+        //Setting up recycler view for top dishes
         vh.RclTopDishes.setAdapter(TopPicksAdapter);
         LinearLayoutManager TopDishesManager = new LinearLayoutManager(this);
         TopDishesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         vh.RclTopDishes.setLayoutManager(TopDishesManager);
 
+        //Setting up recycler view for categories
         vh.RclCategories.setAdapter(CatRecAdapter);
-
-
         LinearLayoutManager CategoriesManager= new LinearLayoutManager(this);
         CategoriesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclCategories.setLayoutManager(CategoriesManager);
 
+        /**
+         * If user searches for dish go to SearchActivity and show results
+         */
         vh.SearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
