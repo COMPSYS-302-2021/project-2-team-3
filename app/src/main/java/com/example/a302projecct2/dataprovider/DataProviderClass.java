@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +25,7 @@ public class DataProviderClass {
 
     private CategoryClass[] cuisinesCategories;
     private ArrayList<ItemClass[]> allDishes;
-    private String[] cusines = {"japanese_dishes", "italian_dishes", "indian_dishes"};
+    private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
 
 
     public DataProviderClass(Context ctx) {
@@ -40,6 +41,19 @@ public class DataProviderClass {
         }
     }
 
+    //Randomly generate top dishes
+    public ItemClass[] getTopDishes(){
+        ItemClass[] topDishes = new ItemClass[allDishes.size()];
+        int pos = (int) (Math.random()*getLongestArrayVal(allDishes));
+
+        //Save item from each cusine into one array for top picks
+        for(int i=0; i<allDishes.size(); i++){
+            topDishes[i] = allDishes.get(i)[pos];
+        }
+        return topDishes;
+
+    }
+
     public CategoryClass[] getCusinesCategories(){
         return this.cuisinesCategories;
     }
@@ -48,6 +62,16 @@ public class DataProviderClass {
         return this.allDishes;
     }
 
+    //Gets the longest array of food items
+    public int getLongestArrayVal(ArrayList<ItemClass[]> arr){
+        int[] lengths = new int[arr.size()];
+        for(int i=0; i<arr.size(); i++){
+            lengths[i] = arr.get(i).length;
+        }
+
+        Arrays.sort(lengths);
+        return lengths[lengths.length - 1];
+    }
 
 
     public String LoadJsonFromAsset(Context ctx){
