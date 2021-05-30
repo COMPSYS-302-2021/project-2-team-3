@@ -61,7 +61,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclCategories"
             android:layout_width="match_parent"
-            android:layout_height="455dp"
+            android:layout_height="597dp"
             android:nestedScrollingEnabled="true" />
 
 
