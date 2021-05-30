@@ -90,6 +90,105 @@
                      "https://photo2.foodgawker.com/wp-content/uploads/2018/01/3145908.jpg"
                    ]
     }
+  ],
+
+  "indian_dishes":[
+
+    {
+      "dishName": "Chicken Biryani",
+      "dishDescription": "Long-grained rice flavored with fragrant spices such as saffron and layered with chicken.",
+      "dishPrice": "$25",
+      "dishImages": ["https://static.toiimg.com/thumb/54308405.cms?imgsize=510571&width=800&height=800",
+        "https://bombaypalaceinvercargill.co.nz/wp-content/uploads/2021/02/Chicken-Biryani.jpg",
+        "https://static.toiimg.com/thumb/53096628.cms?imgsize=104874&width=800&height=800"
+      ]
+    },
+
+    {
+      "dishName": "Butter Chicken",
+      "dishDescription": "A mild curry has tender chunks of chicken simmered in a creamy spiced curry sauce.",
+      "dishPrice": "$15",
+      "dishImages": ["https://www.indianhealthyrecipes.com/wp-content/uploads/2014/09/butter-chicken-500x500.jpg",
+        "https://cafedelites.com/wp-content/uploads/2019/01/Butter-Chicken-IMAGE-64-500x500.jpg",
+        "https://s9c2c8i7.rocketcdn.me/wp-content/uploads/2020/10/butter-chicken-500x500.jpg"
+      ]
+    },
+    {
+      "dishName": "Mango Kulfi",
+      "dishDescription": "Creamy and delicious Mango Kulfi is the India version of Mango Ice Cream! Made with milk, milk solids, nuts and flavored with cardamom this kulfi is the ultimate summer treat!",
+      "dishPrice": "$8",
+      "dishImages": ["https://www.whiskaffair.com/wp-content/uploads/2020/06/Mango-Kulfi-2-3.jpg",
+        "https://www.cookwithmanali.com/wp-content/uploads/2018/05/Indian-Mango-Kulfi-500x500.jpg",
+        "http://www.relishthebite.com/wp-content/uploads/2015/06/MangoKulfi-4-1024x1024.jpg"
+      ]
+    },
+    {
+      "dishName": "Gulab Jamun",
+      "dishDescription": "This delicious treat consists of soft, melt-in-your-mouth, fried dumplings that are traditionally made of thickened or reduced milk and then soaked in a sugar syrup made with rose water",
+      "dishPrice": "$8",
+      "dishImages": ["https://static.toiimg.com/thumb/63799510.cms?imgsize=1091643&width=800&height=800",
+        "https://www.cookwithmanali.com/wp-content/uploads/2018/05/Indian-Mango-Kulfi-500x500.jpghttps://www.alicaspepperpot.com/wp-content/uploads/2014/03/gj4.jpg",
+        "https://img-global.cpcdn.com/recipes/520c48c954ddb877/400x400cq70/photo.jpg"
+      ]
+    },
+    {
+      "dishName": "Garlic Naan",
+      "dishDescription": "Indian flatbread covered with garlic",
+      "dishPrice": "$3",
+      "dishImages": ["https://www.kitchensanctuary.com/wp-content/uploads/2021/03/Garlic-Naan-square-FS-42.jpg",
+        "https://cafedelites.com/wp-content/uploads/2020/06/Garlic-Naan-Recipe-IMAGE-27-500x500.jpg",
+        "https://bakealish.com/wp-content/uploads/2018/05/IMG_0921-720x720.jpg"
+      ]
+    },
+    {
+      "dishName": "Chicken Tikka Masala",
+      "dishDescription": "A dish consisting of roasted marinated chicken chunks in spiced curry sauce",
+      "dishPrice": "$3",
+      "dishImages": ["https://www.daringgourmet.com/wp-content/uploads/2019/12/Chicken-Tikka-Masala-10-square.jpg",
+        "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Tikka-Masala-min.jpg",
+        "https://www.easypeasyfoodie.com/wp-content/uploads/2018/05/IMG_0226-4.jpg"
+      ]
+    },
+    {
+      "dishName": "Tandoori Chicken",
+      "dishDescription": "A dish of roasted chicken marinated in yogurt and generously spiced, giving the meat a red colour.",
+      "dishPrice": "$12",
+      "dishImages": ["https://www.licious.in/blog/wp-content/uploads/2020/12/Tandoori-Chicken.jpg",
+        "https://www.196flavors.com/wp-content/uploads/2020/11/chicken-tandoori-4-FP.jpg",
+        "https://i.pinimg.com/originals/2c/56/16/2c5616accfc0a66e2e1654b6a9ad0078.jpg"
+      ]
+    },
+    {
+      "dishName": "Paneer Tikka",
+      "dishDescription": "Chunks of paneer(Indian Cottage Cheese) marinated in spices and grilled in a tandoor.",
+      "dishPrice": "$14",
+      "dishImages": ["https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka-500x500.jpg",
+        "https://www.ruchiskitchen.com/wp-content/uploads/2015/04/Achari-paneer-tikka-recipe-6-500x500.jpg",
+        "https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2-225x225.jpg"
+      ]
+    },
+
+
+    {
+      "dishName": "Balti Chicken or Lamb",
+      "dishDescription": "A dish that it's cooked in is an Indian cast iron, round-bottomed wok with two handles called a karahi. The curry is made with either chicken or lamb with a thick, spicy tomato-based sauce. Spicy with a little tanginess from the yoghurt that's added.",
+      "dishPrice": "$14",
+      "dishImages": ["https://bigoven-res.cloudinary.com/image/upload/t_recipe-1280/chicken-balti-b80806.jpg",
+        "https://www.krumpli.co.uk/wp-content/uploads/2019/11/Chicken-Balti-1-720x720.jpg",
+        "https://samirsindiankitchen.com.au/wp-content/uploads/2020/03/Blati.jpg"
+      ]
+    },
+
+    {
+      "dishName": "Vegetable Jalfrezi",
+      "dishDescription": "A popular North Indian side dish prepared by sauteing vegetables with spices",
+      "dishPrice": "$14",
+      "dishImages": ["https://bigoven-res.cloudinary.com/image/upload/t_recipe-1280/chicken-balti-b80806.jpg",
+        "https://www.krumpli.co.uk/wp-content/uploads/2019/11/Chicken-Balti-1-720x720.jpg",
+        "https://samirsindiankitchen.com.au/wp-content/uploads/2020/03/Blati.jpg"
+      ]
+    }
+
   ]
 
 
