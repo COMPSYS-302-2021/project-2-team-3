@@ -16,17 +16,23 @@ public class viewItemPage extends AppCompatActivity {
         private TextView ItemDescription = findViewById(R.id.ItemDescription);
         private TextView ItemPrice = findViewById(R.id.ItemPrice);
     }
-
-
+    ViewPager mViewPager;
+    String[] images;
+    ViewPagerAdapter mViewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_item_page);
+        images = getIntent().getStringArrayExtra("itemImages");
         ViewItemsViewHolder vh = new ViewItemsViewHolder();
 
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
+
+        mViewPager = (ViewPager)findViewById(R.id.ImageSlider);
+        mViewPagerAdapter = new ViewPagerAdapter(viewItemPage.this,images);
+        mViewPager.setAdapter(mViewPagerAdapter);
 
         vh.ItemTitle.setText(getIntent().getStringExtra("itemName"));
         vh.ItemDescription.setText(getIntent().getStringExtra("itemDescription"));
