@@ -2,11 +2,9 @@ package com.example.a302projecct2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,7 +20,8 @@ public class Homepage extends AppCompatActivity {
         private RecyclerView RclCategories = findViewById(R.id.RclCategories);
     }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         viewholder vh = new viewholder();
@@ -61,6 +60,10 @@ public class Homepage extends AppCompatActivity {
                  */
             }
         });
+    }
+    @Override
+    public void onBackPressed () {
+
     }
 
 }
