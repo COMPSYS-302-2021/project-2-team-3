@@ -59,11 +59,14 @@ public class SearchActivity extends AppCompatActivity {
             vh.txtSearch.setText("No search results for \n" + searchQuery);
         }
         else{
-            ListActivityRecAdapter searchAdapter = new ListActivityRecAdapter(getBaseContext(), searchResults);
-            vh.RclSearch.setAdapter(searchAdapter);
-            LinearLayoutManager SearchManager= new LinearLayoutManager(this);
-            SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
-            vh.RclSearch.setLayoutManager(SearchManager);
+            /**
+             * Create new adapter for searchActivty
+             */
+//            ListActivityRecAdapter searchAdapter = new ListActivityRecAdapter(getBaseContext(), searchResults);
+//            vh.RclSearch.setAdapter(searchAdapter);
+//            LinearLayoutManager SearchManager= new LinearLayoutManager(this);
+//            SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
+//            vh.RclSearch.setLayoutManager(SearchManager);
         }
 
 

@@ -28,15 +28,13 @@ public class DataProviderClass {
         };
         allDishes = new ArrayList<ArrayList<ItemClass>>();
         ArrayList<ItemClass> japanese = generateData(ctx, "japanese_dishes");
-//        ArrayList<ItemClass> indian = generateData(ctx, "indian_dishes");
+        ArrayList<ItemClass> indian = generateData(ctx, "indian_dishes");
 //        ArrayList<ItemClass> italian = generateData(ctx, "italian_dishes");
-        System.out.println("japanese: " + japanese.size());
-//        System.out.println("indian: " + indian.size());
-//        System.out.println("italian: " + italian.size());
 
 
         //Adding data is the issue
         allDishes.add(japanese);
+        allDishes.add(indian);
 //        allDishes.add(indian);
 //        allDishes.add(italian);
 

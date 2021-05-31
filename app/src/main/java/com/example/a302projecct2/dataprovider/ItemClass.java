@@ -22,6 +22,8 @@ public class ItemClass implements Parcelable {
         itemImages = in.createStringArray();
     }
 
+
+
     public static final Creator<ItemClass> CREATOR = new Creator<ItemClass>() {
         @Override
         public ItemClass createFromParcel(Parcel in) {

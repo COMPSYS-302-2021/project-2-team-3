@@ -170,8 +170,8 @@
 
 
     {
-      "dishName": "Balti Chicken or Lamb",
-      "dishDescription": "A dish that it's cooked in is an Indian cast iron, round-bottomed wok with two handles called a karahi. The curry is made with either chicken or lamb with a thick, spicy tomato-based sauce. Spicy with a little tanginess from the yoghurt that's added.",
+      "dishName": "Balti Chicken",
+      "dishDescription": "A dish that it's cooked in is an Indian cast iron, round-bottomed wok with two handles called a karahi. The curry is made with chicken in a thick, spicy tomato-based sauce. Spicy with a little tanginess from the yoghurt that's added.",
       "dishPrice": "$14",
       "dishImages": ["https://bigoven-res.cloudinary.com/image/upload/t_recipe-1280/chicken-balti-b80806.jpg",
         "https://www.krumpli.co.uk/wp-content/uploads/2019/11/Chicken-Balti-1-720x720.jpg",
