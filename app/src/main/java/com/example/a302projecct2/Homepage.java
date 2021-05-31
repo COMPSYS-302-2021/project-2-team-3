@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -54,6 +55,7 @@ public class Homepage extends AppCompatActivity {
                 String searchQuery = vh.SearchBarTxt.getText().toString();
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
                 intent.putExtra("searchQuery", searchQuery);
+                startActivity(intent);
                 /**
                  * Change it so we create data variable in searchACtivity class
                  */

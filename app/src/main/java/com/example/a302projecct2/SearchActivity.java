@@ -36,7 +36,8 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         searchViewHolder vh = new searchViewHolder();
-
+        data = new DataProviderClass(getBaseContext());
+        searchResults = new ArrayList<ItemClass>();
         //Constructor takes in search term and we create instance of dataprovider and search through all
         //the names to find the dish that we are looking for whatever matches then save them in a array
         //of itemclass which is then passed into the intent of the
@@ -59,15 +60,11 @@ public class SearchActivity extends AppCompatActivity {
             vh.txtSearch.setText("No search results for \n" + searchQuery);
         }
         else{
-            /**
-             * TODO:
-             * Create new adapter for searchActivty
-             */
-//            ListActivityRecAdapter searchAdapter = new ListActivityRecAdapter(getBaseContext(), searchResults);
-//            vh.RclSearch.setAdapter(searchAdapter);
-//            LinearLayoutManager SearchManager= new LinearLayoutManager(this);
-//            SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
-//            vh.RclSearch.setLayoutManager(SearchManager);
+            SearchActivityAdapter searchAdapter = new SearchActivityAdapter(getBaseContext(), searchResults);
+            vh.RclSearch.setAdapter(searchAdapter);
+            LinearLayoutManager SearchManager= new LinearLayoutManager(this);
+            SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
+            vh.RclSearch.setLayoutManager(SearchManager);
         }
 
 
