@@ -63,6 +63,7 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
                     intent.putExtra("itemPrice",searchResults.get(position).getItemPrice());
                     intent.putExtra("itemDescription",searchResults.get(position).getItemDescription());
                     intent.putExtra("itemImages", searchResults.get(position).getItemImages());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
 
                 }
