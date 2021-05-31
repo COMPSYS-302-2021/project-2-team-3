@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.302Projecct2">
         <activity android:name=".SearchActivity"></activity>
-        <activity android:name=".ListActivity" />
+        <activity android:name=".ListDishes" />
         <activity android:name=".Homepage" />
         <activity android:name=".viewItemPage" />
         <activity android:name=".MainActivity">

@@ -12,7 +12,7 @@ import com.example.a302projecct2.dataprovider.ItemClass;
 
 import java.util.ArrayList;
 
-public class ListActivity extends AppCompatActivity {
+public class ListDishes extends AppCompatActivity {
     public class ListActivityViewHolder {
 
         private TextView CuisineName = findViewById(R.id.CuisineName);
@@ -21,14 +21,14 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_list);
         ListActivityViewHolder vh = new ListActivityViewHolder();
 
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
 
         //Creating recycler view adapters for top dishes and category items
-        ArrayList<ItemClass> list = (ArrayList<ItemClass>)getIntent().getExtras().getSerializable("items");
+        ArrayList<ItemClass> list = getIntent().getParcelableExtra("items");
         ListActivityRecAdapter Dishes = new ListActivityRecAdapter(getBaseContext(), list);
 
 

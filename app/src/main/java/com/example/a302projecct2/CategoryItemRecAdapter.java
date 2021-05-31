@@ -1,7 +1,6 @@
 package com.example.a302projecct2;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -62,10 +61,23 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                 if(!isConnected()){
                     showNotConnectedDialog();
                 }
-                else{
-                    Intent intent = new Intent(ctx, ListActivity.class);
+                else {
+//                    try {
+//                        FileOutputStream file = new FileOutputStream(filename);
+//                        ObjectOutputStream out = new ObjectOutputStream(file);
+//                        ArrayList<ItemClass> cuisineItems = items.get(position);
+//                        out.writeObject(cuisineItems);
+//                        out.close();
+//                        file.close();
+//
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
+                    Intent intent = new Intent(ctx, ListDishes.class);
                     intent.putExtra("items", items.get(position));
                     intent.putExtra("CategoryName", categoryNames[position].getCategoryName());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
                 }
             }
