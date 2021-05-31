@@ -189,14 +189,14 @@
       ]
     }
 
-  ]
+  ],
 	"Italian_dishes": [ 
 {
       "dishName": "Margherita Pizza",
       "dishDescription": "A typical Neapolitan pizza, made with tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
       "dishPrice": "$10",
-      "dishImages": [   "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/margherita-pizza-4.jpg"
-			"https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_1392,h_1740/k%2Farchive%2Fb36036a54e1cf9c084f4b702a63e5a08f1e98983"
+      "dishImages": [ "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/margherita-pizza-4.jpg",
+			"https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_1392,h_1740/k%2Farchive%2Fb36036a54e1cf9c084f4b702a63e5a08f1e98983",
 			"https://www.spicesinmydna.com/wp-content/uploads/2020/05/Gluten-Free-Margherita-Pizza-4-500x500.jpg"
                     ]
     },
