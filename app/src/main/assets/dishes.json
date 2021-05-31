@@ -190,6 +190,97 @@
     }
 
   ]
-
+	"Italian_dishes": [ 
+{
+      "dishName": "Margherita Pizza",
+      "dishDescription": "A typical Neapolitan pizza, made with tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
+      "dishPrice": "$10",
+      "dishImages": [   "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/margherita-pizza-4.jpg"
+			"https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_1392,h_1740/k%2Farchive%2Fb36036a54e1cf9c084f4b702a63e5a08f1e98983"
+			"https://www.spicesinmydna.com/wp-content/uploads/2020/05/Gluten-Free-Margherita-Pizza-4-500x500.jpg"
+                    ]
+    },
+    {
+      "dishName": "Pepperoni Pizza",
+      "dishDescription": "A classic pizza, made with tomatoes, cheese and of course pepperoni slices.",
+      "dishPrice": "$12",
+      "dishImages": ["https://www.sals.co.nz/wp-content/uploads/MenuPepperoni-1.jpg",
+                     "https://pcpizza.co.nz/wp-content/uploads/2018/11/pepproni-pizza.png",
+                      "https://image.arrivalguides.com/1230x800/18/6c236d456525da638c17540eeb8ddf58.jpg"
+                    ]
+    },
+    {
+      "dishName": "Meat lovers pizza",
+      "dishDescription": "A pizza dish coveting a wide range of meats including italian sausage, ground beef, bacon, pepperoni, and sliced ham.",
+      "dishPrice": "$14",
+      "dishImages": ["https://cdn11.bigcommerce.com/s-p6vajvx5jy/images/stencil/1280x1280/products/117/663/Meat_Lovers_2__84120.1556128972.jpg?c=2",
+                     "https://myfoodbook.com.au/sites/default/files/styles/sr_wd/public/recipe_photo/Whisk_PI_190919_Pizzas_006_MEAT_LOVERS.jpg",
+                     "https://www.queensleeappetit.com/wp-content/uploads/2019/02/Meat-Lovers-Pizza-3.jpg"
+                    ]
+    },
+    {
+      "dishName": "Chicken and Chorizo Pasta",
+      "dishDescription": "A simple pasta dish containing chicken, chorizo, parmesan cheese, tomatoes, and basil",
+      "dishPrice": "$12",
+      "dishImages": ["https://www.sprinklesandsprouts.com/wp-content/uploads/2019/09/Creamy-Tomato-Chicken-and-Chorizo-Pasta-5.jpg",
+                     "https://v1.nitrocdn.com/gdQToJpjwmoFSVXcSlvjpaoApjexzIdE/assets/static/source/rev-a573ee2/wp-content/uploads/2019/03/easy-chorizo-pasta-recipe-1-720x1080.jpg",
+                     "https://www.hintofhealthy.com/wp-content/uploads/2021/03/Chicken-and-Chorizo-Pasta-2-1.jpg"
+                    ]
+    },
+    {
+      "dishName": "Three chese ravioli",
+      "dishDescription": "A classic ravioli dish incorporating ricotta, mozzarella and parmesan cheese filling.",
+      "dishPrice": "$12",
+      "dishImages": ["https://www.aberdeenskitchen.com/wp-content/uploads/2020/10/Homemade-Herbed-Three-Cheese-Ravioli-9.jpg",
+                     "https://www.forkinthekitchen.com/wp-content/uploads/2019/03/190223.ricotta.ravioli.updated-8419-6.jpg",
+                     "https://iambaker.net/wp-content/uploads/2019/11/ravioli-blog-2.jpg"
+                    ]
+    },
+    {
+      "dishName": "Carbonara",
+      "dishDescription": "A Roman pasta dish made with egg, parmesan cheese, cured pork and black pepper.",
+      "dishPrice": "$15",
+      "dishImages": ["https://www.kitchensanctuary.com/wp-content/uploads/2020/09/Chicken-Carbonara-tall-FS-56.webp",
+                     "https://muchbutter.com/wp-content/uploads/2019/08/072-Much-Butter-Smoked-beef-carbonara-4.jpg",
+                     "https://simply-delicious-food.com/wp-content/uploads/2020/09/Spaghetti-Carbonara-6.jpg"
+                    ]
+    },
+    {
+      "dishName": "Lasagne",
+      "dishDescription": "A dish made by stacking layers of thin flat pasta with ragù filling, the dish also includes ricotta, mozzarella and parmesan cheese along with garlic and basil.",
+      "dishPrice": "$18",
+      "dishImages": ["https://hips.hearstapps.com/vidthumb/images/180820-bookazine-delish-01280-1536610916.jpg?crop=1xw:1xh;center,top&resize=768:*",
+                     "https://img.taste.com.au/ac7b3pV-/w643-h428-cfill-q90/taste/2016/11/beef-lasagne-77009-1.jpeg",
+                     "https://www.recipetineats.com/wp-content/uploads/2017/05/Lasagne-recipe-3-main.jpg?resize=650,910"
+                    ]
+    },
+    {
+      "dishName": "Risotto",
+      "dishDescription": "An Italian rice dish mixing in butter, onion and parmesan cheese.",
+      "dishPrice": "$10",
+      "dishImages": ["https://www.thespruceeats.com/thmb/8jAg8f0gMWKoTb4d_vUzsRhKoBY=/3246x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mushroom-risotto-recipe-996005-hero-01-5c3ab578c9e77c0001d3d78f.jpg",
+                     "https://www.thespruceeats.com/thmb/5mExmaXLqLawTKT7s34NK3xVOzg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/risotto-recipe-for-beginners-996008-hero-01-9ca07ec80a024c80909e0c8a92f0674c.jpg",
+                     "https://www.thespruceeats.com/thmb/8jAg8f0gMWKoTb4d_vUzsRhKoBY=/3246x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mushroom-risotto-recipe-996005-hero-01-5c3ab578c9e77c0001d3d78f.jpg"
+                    ]
+    },
+    {
+      "dishName": "Foccacia",
+      "dishDescription": "A flat oven-baked bread which is served as a side dish.",
+      "dishPrice": "$6",
+      "dishImages": ["https://sugarfreelondoner.com/wp-content/uploads/2020/09/keto-focaccia.jpg",
+                     "https://www.jessicagavin.com/wp-content/uploads/2020/04/focaccia-bread-23-600x900.jpg",
+                     "https://handletheheat.com/wp-content/uploads/2014/08/Focaccia-Bread-SQUARE.jpg"
+                    ]
+    },
+    {
+      "dishName": "Tiramisu",
+      "dishDescription": "A coffee flavoured desert comprised of eggs, mascarpone cheese, and cocoa.",
+      "dishPrice": "$10",
+      "dishImages": ["https://www.culinaryhill.com/wp-content/uploads/2020/09/Tiramisu-Recipe-Culinary-Hill-LR-03.jpg",
+                     "https://tastesbetterfromscratch.com/wp-content/uploads/2017/04/Tiramisu-14.jpg",
+                     "https://static01.nyt.com/images/2017/04/05/dining/05COOKING-TIRAMISU1/05COOKING-TIRAMISU1-articleLarge.jpg"
+                   ]
+    }
+  ],
 
 }
