@@ -62,22 +62,11 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                     showNotConnectedDialog();
                 }
                 else {
-//                    try {
-//                        FileOutputStream file = new FileOutputStream(filename);
-//                        ObjectOutputStream out = new ObjectOutputStream(file);
-//                        ArrayList<ItemClass> cuisineItems = items.get(position);
-//                        out.writeObject(cuisineItems);
-//                        out.close();
-//                        file.close();
-//
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
 
                     Intent intent = new Intent(ctx, ListDishes.class);
-                    intent.putExtra("items", items.get(position));
                     intent.putExtra("CategoryName", categoryNames[position].getCategoryName());
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("position", position);
                     ctx.startActivity(intent);
                 }
             }

@@ -54,7 +54,9 @@ public class Homepage extends AppCompatActivity {
                 String searchQuery = vh.SearchBarTxt.getText().toString();
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
                 intent.putExtra("searchQuery", searchQuery);
-                intent.putExtra("data", (Parcelable) data);
+                /**
+                 * Change it so we create data variable in searchACtivity class
+                 */
             }
         });
     }

@@ -18,6 +18,9 @@ public class ListDishes extends AppCompatActivity {
         private TextView CuisineName = findViewById(R.id.CuisineName);
         private RecyclerView RclDishes = findViewById(R.id.RclDishes);
     }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,18 +29,17 @@ public class ListDishes extends AppCompatActivity {
 
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
-
-        //Creating recycler view adapters for top dishes and category items
-        ArrayList<ItemClass> list = getIntent().getParcelableExtra("items");
+        int pos = getIntent().getIntExtra("position", 0);
+        ArrayList<ItemClass>  list = data.getAllDishes().get(pos);
         ListActivityRecAdapter Dishes = new ListActivityRecAdapter(getBaseContext(), list);
 
 
         //Setting up recycler view for top dishes
         vh.RclDishes.setAdapter(Dishes);
         LinearLayoutManager DishesManager = new LinearLayoutManager(this);
-        DishesManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        DishesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclDishes.setLayoutManager(DishesManager);
-        vh.CuisineName.setText(getIntent().getStringExtra("categoryName"));
+        vh.CuisineName.setText(getIntent().getStringExtra("CategoryName"));
 
         //Setting up recycler view for categories
 
