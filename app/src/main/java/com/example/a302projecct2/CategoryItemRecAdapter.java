@@ -65,6 +65,7 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                 else{
                     Intent intent = new Intent(ctx, ListActivity.class);
                     intent.putExtra("items", items.get(position));
+                    intent.putExtra("CategoryName", categoryNames[position].getCategoryName());
                     ctx.startActivity(intent);
                 }
             }
