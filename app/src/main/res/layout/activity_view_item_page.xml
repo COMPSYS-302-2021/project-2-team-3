@@ -1,62 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".viewItemPage">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/ImageSlider"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher_background"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".viewItemPage">
 
-    <TextView
-        android:id="@+id/ItemTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Item Name"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:textSize="50dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="230dp"/>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/ImageSlider"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_launcher_background"
+            />
 
-    <TextView
-        android:id="@+id/ItemDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:textSize="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="300dp"
-        />
+        <TextView
+            android:id="@+id/ItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ImageSlider"
+            android:textSize="50dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"/>
 
-    <Button
-        android:id="@+id/buybutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ItemDescription"
-        android:textSize="30dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="50dp"
-        android:text="Buy" />
-    <TextView
-        android:id="@+id/ItemPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$5.99"
-        android:textSize="30dp"
-        android:layout_toRightOf="@+id/buybutton"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/ItemDescription"
-        />
+        <TextView
+            android:id="@+id/ItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ItemTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/buybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ItemDescription"
+            android:textSize="30dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="50dp"
+            android:text="Buy" />
+        <TextView
+            android:id="@+id/ItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$5.99"
+            android:textSize="30dp"
+            android:layout_toRightOf="@+id/buybutton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_below="@+id/ItemDescription"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>
+
