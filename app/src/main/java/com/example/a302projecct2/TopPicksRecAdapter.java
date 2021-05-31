@@ -62,6 +62,8 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                     intent.putExtra("itemPrice", topPickItems[position].getItemPrice());
                     intent.putExtra("itemDescription", topPickItems[position].getItemDescription());
                     intent.putExtra("itemImages", topPickItems[position].getItemImages());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    ctx.startActivity(intent);
                 }
 
             }
