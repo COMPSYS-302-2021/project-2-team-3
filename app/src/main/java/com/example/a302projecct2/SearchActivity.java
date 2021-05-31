@@ -60,6 +60,7 @@ public class SearchActivity extends AppCompatActivity {
         }
         else{
             /**
+             * TODO:
              * Create new adapter for searchActivty
              */
 //            ListActivityRecAdapter searchAdapter = new ListActivityRecAdapter(getBaseContext(), searchResults);
