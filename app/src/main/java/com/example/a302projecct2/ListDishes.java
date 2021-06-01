@@ -33,7 +33,7 @@ public class ListDishes extends AppCompatActivity {
 
         SharedPreferences ShPref = getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
         String categoryName = ShPref.getString("Name","");
-        
+
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
         int pos = ShPref.getInt("cuisinePos", 0);

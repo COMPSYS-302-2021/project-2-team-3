@@ -86,10 +86,7 @@ public class JsonFuncs {
             JSONObject selectedItem = cuisineArray.getJSONObject(itemPos);
             //Need to increment the value of clicked inside
             int clickVal  = ((int)selectedItem.get("clickNum"))+1;
-            /**
-             * TODO:put the new click value
-             */
-
+            selectedItem.put("clickNum", clickVal);
 
         } catch (JSONException e) {
             e.printStackTrace();
