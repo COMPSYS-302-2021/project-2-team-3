@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -52,8 +53,7 @@ public class ListDishes extends AppCompatActivity {
          * If user searches for dish go to SearchActivity and show results*/
 
     }
-<<<<<<< Updated upstream
-=======
+
     @Override
     public void onBackPressed () {
         Connectivity Con= new Connectivity(getBaseContext());
@@ -67,6 +67,6 @@ public class ListDishes extends AppCompatActivity {
 
         }
     }
->>>>>>> Stashed changes
+
 
 }

@@ -1,7 +1,9 @@
 package com.example.a302projecct2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -39,8 +41,7 @@ public class viewItemPage extends AppCompatActivity {
         vh.ItemPrice.setText(getIntent().getStringExtra("itemPrice"));
 
     }
-<<<<<<< Updated upstream
-=======
+
     @Override
     public void onBackPressed () {
         Connectivity Con= new Connectivity(getBaseContext());
@@ -64,6 +65,6 @@ public class viewItemPage extends AppCompatActivity {
             }
         }
     }
->>>>>>> Stashed changes
+
 
 }

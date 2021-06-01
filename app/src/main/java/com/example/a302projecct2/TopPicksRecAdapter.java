@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.bumptech.glide.Glide;
 
@@ -62,6 +60,7 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                     intent.putExtra("itemPrice", topPickItems[position].getItemPrice());
                     intent.putExtra("itemDescription", topPickItems[position].getItemDescription());
                     intent.putExtra("itemImages", topPickItems[position].getItemImages());
+                    intent.putExtra("prevPage", "Home");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
                 }

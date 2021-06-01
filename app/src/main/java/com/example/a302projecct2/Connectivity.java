@@ -16,7 +16,7 @@ public class Connectivity {
     }
 
     //Check if device is connected a network
-    private boolean isConnected(){
+    public boolean isConnected(){
         ConnectivityManager connectivityManager = (ConnectivityManager)ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         //Check if device is connected to internet

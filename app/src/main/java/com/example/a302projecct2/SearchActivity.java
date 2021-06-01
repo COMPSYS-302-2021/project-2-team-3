@@ -1,7 +1,6 @@
 package com.example.a302projecct2;
 
-<<<<<<< Updated upstream
-=======
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -10,16 +9,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
->>>>>>> Stashed changes
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.text.Editable;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.a302projecct2.dataprovider.DataProviderClass;
 import com.example.a302projecct2.dataprovider.ItemClass;
@@ -82,5 +74,17 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
+    }
+    public void onBackPressed () {
+        Connectivity Con= new Connectivity(getBaseContext());
+        if (!Con.isConnected()) {
+            //showNotConnectedDialog();
+            Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent intent = new Intent(getBaseContext(),Homepage.class);
+            startActivity(intent);
+
+        }
     }
 }
