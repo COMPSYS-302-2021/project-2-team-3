@@ -10,6 +10,8 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
     private Context ctx;
     private ArrayList<ItemClass> searchResults;
+    private int lastPosition = -1;
 
     public SearchActivityAdapter(Context ctx, ArrayList<ItemClass> searchResults){
         this.ctx = ctx;
@@ -43,37 +46,43 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
     @Override
     public void onBindViewHolder(@NonNull SearchActivityAdapter.SearchViewHolder holder, int position) {
-        holder.txtItemName.setText(searchResults.get(position).getItemName());
-        holder.txtItemPrice.setText(searchResults.get(position).getItemPrice());
-        Glide.with(this.ctx)
-                .load(searchResults.get(position).getItemImages()[0])
-                .placeholder(R.drawable.ic_launcher_background)
-                .into(holder.imgListItem);
 
-        holder.cvListItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if(holder.getAdapterPosition()>lastPosition){
+            Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
+            holder.cvListItem.startAnimation(animation);
+            holder.txtItemName.setText(searchResults.get(position).getItemName());
+            holder.txtItemPrice.setText(searchResults.get(position).getItemPrice());
+            Glide.with(this.ctx)
+                    .load(searchResults.get(position).getItemImages()[0])
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .into(holder.imgListItem);
 
-                Connectivity conn = new Connectivity(ctx);
+            holder.cvListItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                if(!conn.isConnected()){
-                    Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
+                    Connectivity conn = new Connectivity(ctx);
+
+                    if(!conn.isConnected()){
+                        Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+
+                        Intent intent = new Intent(ctx, viewItemPage.class);
+                        intent.putExtra("itemName",searchResults.get(position).getItemName());
+                        intent.putExtra("itemPrice",searchResults.get(position).getItemPrice());
+                        intent.putExtra("itemDescription",searchResults.get(position).getItemDescription());
+                        intent.putExtra("itemImages", searchResults.get(position).getItemImages());
+                        intent.putExtra("prevPage", "Search");
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        ctx.startActivity(intent);
+
+                    }
+
                 }
-                else{
-
-                    Intent intent = new Intent(ctx, viewItemPage.class);
-                    intent.putExtra("itemName",searchResults.get(position).getItemName());
-                    intent.putExtra("itemPrice",searchResults.get(position).getItemPrice());
-                    intent.putExtra("itemDescription",searchResults.get(position).getItemDescription());
-                    intent.putExtra("itemImages", searchResults.get(position).getItemImages());
-                    intent.putExtra("prevPage", "Search");
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    ctx.startActivity(intent);
-
-                }
-
-            }
-        });
+            });
+            lastPosition = holder.getAdapterPosition();
+        }
 
     }
 

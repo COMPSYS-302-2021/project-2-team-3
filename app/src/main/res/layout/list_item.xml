@@ -7,7 +7,9 @@
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/itemConstraintProperties">
+        style="@style/itemConstraintProperties"
+        android:id="@+id/parentLayout">
+
 
         <ImageView
             android:id="@+id/img_list_item"
@@ -16,11 +18,12 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/txtItemName"
             android:text="Item Name"
             app:layout_constraintStart_toEndOf="@id/img_list_item"
+            app:layout_constraintEnd_toEndOf="@id/parentLayout"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="10dp"
             android:textSize="25dp"

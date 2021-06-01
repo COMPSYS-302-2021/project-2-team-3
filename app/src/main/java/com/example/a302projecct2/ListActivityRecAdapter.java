@@ -10,6 +10,8 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
 
     private Context ctx;
     private ArrayList <ItemClass> items;
+    private int lastPosition = -1;
 
     public ListActivityRecAdapter(Context ctx, ArrayList<ItemClass> items){
         this.ctx = ctx;
@@ -47,42 +50,56 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     //Binds the data to the layout that will be used for each item
     @Override
     public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
-        holder.txtItemName.setText(items.get(position).getItemName());
-        holder.txtItemPrice.setText(items.get(position).getItemPrice());
-        Glide.with(this.ctx)
-                .load(items.get(position).getItemImages()[0])
-                .placeholder(R.drawable.ic_launcher_background)
-                .into(holder.imgListItem);
 
-        holder.cvListItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if(holder.getAdapterPosition()>lastPosition){
 
-                Connectivity conn = new Connectivity(ctx);
+            Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
+            holder.cvListItem.startAnimation(animation);
 
-                if(!conn.isConnected()){
-                    Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
+            holder.txtItemName.setText(items.get(position).getItemName());
+            holder.txtItemPrice.setText(items.get(position).getItemPrice());
+            Glide.with(this.ctx)
+                    .load(items.get(position).getItemImages()[0])
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .into(holder.imgListItem);
+
+            holder.cvListItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Connectivity conn = new Connectivity(ctx);
+
+                    if(!conn.isConnected()){
+                        Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        JsonFuncs funcs = new JsonFuncs(ctx);
+
+
+                        Intent intent = new Intent(ctx, viewItemPage.class);
+                        intent.putExtra("itemName",items.get(position).getItemName());
+                        intent.putExtra("itemPrice",items.get(position).getItemPrice());
+                        intent.putExtra("itemDescription",items.get(position).getItemDescription());
+                        intent.putExtra("itemImages", items.get(position).getItemImages());
+                        intent.putExtra("prevPage", "List");
+                        //Shared preference for the array of items
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        ctx.startActivity(intent);
+
+                    }
+
                 }
-                else{
+            });
+            lastPosition = holder.getAdapterPosition();
+        }
 
-                    Intent intent = new Intent(ctx, viewItemPage.class);
-                    intent.putExtra("itemName",items.get(position).getItemName());
-                    intent.putExtra("itemPrice",items.get(position).getItemPrice());
-                    intent.putExtra("itemDescription",items.get(position).getItemDescription());
-                    intent.putExtra("itemImages", items.get(position).getItemImages());
-                    intent.putExtra("prevPage", "List");
-                    //Shared preference for the array of items
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    ctx.startActivity(intent);
 
-                }
-
-            }
-        });
 
 
 
     }
+
+
 
     @Override
     //Used to return the number of items that would be displayed

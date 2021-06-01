@@ -87,8 +87,10 @@ public class JsonFuncs {
             //Need to increment the value of clicked inside
             int clickVal  = ((int)selectedItem.get("clickNum"))+1;
             selectedItem.put("clickNum", clickVal);
+            System.out.println("Incremented");
 
         } catch (JSONException e) {
+            System.out.println("exception");
             e.printStackTrace();
         }
     }
