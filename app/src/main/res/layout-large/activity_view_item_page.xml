@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#e59866"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        tools:context=".viewItemPage">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/ImageSlider"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_launcher_background"
+            />
+
+        <TextView
+            android:id="@+id/ItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ImageSlider"
+            android:textSize="75dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/ItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ItemTitle"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/buyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ItemDescription"
+            android:textSize="45dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="50dp"
+            android:text="Buy"
+            android:backgroundTint="#ff5533"/>
+        <TextView
+            android:id="@+id/ItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$5.99"
+            android:textSize="45dp"
+            android:layout_toRightOf="@+id/buyButton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_below="@+id/ItemDescription"
+            android:textColor="@color/black"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>
