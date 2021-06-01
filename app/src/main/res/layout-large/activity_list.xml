@@ -19,7 +19,7 @@
         android:text="Category Name \n"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="70dp"
+        android:textSize="70sp"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
