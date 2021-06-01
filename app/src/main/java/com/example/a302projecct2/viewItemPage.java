@@ -2,6 +2,8 @@ package com.example.a302projecct2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ public class viewItemPage extends AppCompatActivity {
         private TextView ItemTitle = findViewById(R.id.ItemTitle);
         private TextView ItemDescription = findViewById(R.id.ItemDescription);
         private TextView ItemPrice = findViewById(R.id.ItemPrice);
+        private Button buyButton = findViewById(R.id.buyButton);
     }
     ViewPager mViewPager;
     String[] images;
@@ -39,6 +42,12 @@ public class viewItemPage extends AppCompatActivity {
         vh.ItemTitle.setText(getIntent().getStringExtra("itemName"));
         vh.ItemDescription.setText(getIntent().getStringExtra("itemDescription"));
         vh.ItemPrice.setText(getIntent().getStringExtra("itemPrice"));
+        vh.buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(viewItemPage.this, "Purchase Successful", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

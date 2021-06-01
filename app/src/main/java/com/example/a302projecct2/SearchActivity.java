@@ -54,7 +54,7 @@ public class SearchActivity extends AppCompatActivity {
         for(int i = 0; i<allDishes.size(); i++){
             ArrayList<ItemClass> cuisine = allDishes.get(i);
             for (ItemClass itemClass : cuisine) {
-                if (itemClass.getItemName().contains(searchQuery)) {
+                if (itemClass.getItemName().toLowerCase().contains(searchQuery.toLowerCase())) {
                     searchResults.add(itemClass);
                 }
             }
