@@ -16,31 +16,13 @@
         android:padding="16dp"
         android:layout_height="match_parent"
         android:layout_width="match_parent">
-        <LinearLayout
+
+
+        <SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <EditText
-                android:id="@+id/SearchBarTxt"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Search"
-                android:layout_marginLeft="35dp"
-
-                />
-            <ImageView
-                android:id="@+id/SearchBtn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:src="@drawable/magnifying_glass"
-                />
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:queryHint="Search"/>
 
         <TextView
             android:layout_width="wrap_content"

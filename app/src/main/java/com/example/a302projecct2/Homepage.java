@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,10 +17,11 @@ import com.example.a302projecct2.dataprovider.DataProviderClass;
 
 public class Homepage extends AppCompatActivity {
     public class viewholder {
-        private EditText SearchBarTxt = findViewById(R.id.SearchBarTxt);
-        private ImageView SearchBtn = findViewById(R.id.SearchBtn);
+//        private EditText SearchBarTxt = findViewById(R.id.SearchBarTxt);
+//        private ImageView SearchBtn = findViewById(R.id.SearchBtn);
         private RecyclerView RclTopDishes = findViewById(R.id.RclTopDishes);
         private RecyclerView RclCategories = findViewById(R.id.RclCategories);
+        private SearchView searchView = findViewById(R.id.searchView);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,22 +52,41 @@ public class Homepage extends AppCompatActivity {
         /**
          * If user searches for dish go to SearchActivity and show results
          */
-        vh.SearchBtn.setOnClickListener(new View.OnClickListener() {
+        vh.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View v) {
-                String searchQuery = vh.SearchBarTxt.getText().toString();
+            public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
-                //intent.putExtra("searchQuery", searchQuery);
                 SharedPreferences SPref = getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
                 SharedPreferences.Editor SearchEditor = SPref.edit();
-                SearchEditor.putString("Query",searchQuery);
+                SearchEditor.putString("Query",query);
                 SearchEditor.commit();
                 startActivity(intent);
-                /**
-                 * Change it so we create data variable in searchACtivity class
-                 */
+                return true;
+
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
             }
         });
+
+//        vh.SearchBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String searchQuery = vh.SearchBarTxt.getText().toString();
+//                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+//                //intent.putExtra("searchQuery", searchQuery);
+//                SharedPreferences SPref = getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor SearchEditor = SPref.edit();
+//                SearchEditor.putString("Query",searchQuery);
+//                SearchEditor.commit();
+//                startActivity(intent);
+//                /**
+//                 * Change it so we create data variable in searchACtivity class
+//                 */
+//            }
+//        });
     }
     @Override
     public void onBackPressed () {
