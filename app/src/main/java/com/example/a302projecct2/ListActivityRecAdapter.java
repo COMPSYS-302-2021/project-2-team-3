@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
@@ -30,7 +31,6 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
 
     private Context ctx;
     private ArrayList <ItemClass> items;
-    private int lastPosition = -1;
 
     public ListActivityRecAdapter(Context ctx, ArrayList<ItemClass> items){
         this.ctx = ctx;
@@ -51,8 +51,10 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     @Override
     public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
 
-        if(holder.getAdapterPosition()>lastPosition){
-
+            JsonFuncs funcs = new JsonFuncs(ctx);
+            SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
+            int categoryPos = sp.getInt("cuisinePos",0);
+            funcs.incrementCount(categoryPos, position);
             Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
             holder.cvListItem.startAnimation(animation);
 
@@ -73,6 +75,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                         Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
                     }
                     else{
+
                         JsonFuncs funcs = new JsonFuncs(ctx);
 
 
@@ -90,8 +93,8 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
 
                 }
             });
-            lastPosition = holder.getAdapterPosition();
-        }
+
+
 
 
 

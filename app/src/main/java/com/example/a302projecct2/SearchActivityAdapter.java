@@ -29,7 +29,6 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
     private Context ctx;
     private ArrayList<ItemClass> searchResults;
-    private int lastPosition = -1;
 
     public SearchActivityAdapter(Context ctx, ArrayList<ItemClass> searchResults){
         this.ctx = ctx;
@@ -46,8 +45,6 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
     @Override
     public void onBindViewHolder(@NonNull SearchActivityAdapter.SearchViewHolder holder, int position) {
-
-        if(holder.getAdapterPosition()>lastPosition){
             Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
             holder.cvListItem.startAnimation(animation);
             holder.txtItemName.setText(searchResults.get(position).getItemName());
@@ -81,9 +78,6 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
                 }
             });
-            lastPosition = holder.getAdapterPosition();
-        }
-
     }
 
     @Override

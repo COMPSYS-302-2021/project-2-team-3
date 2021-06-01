@@ -81,12 +81,18 @@ public class JsonFuncs {
 
     public void incrementCount(int cuisinePos, int itemPos){
         try{
+            System.out.println("1");
             JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
+            System.out.println("2");
             JSONArray cuisineArray = obj.getJSONArray(cusines[cuisinePos]);
+            System.out.println("3");
             JSONObject selectedItem = cuisineArray.getJSONObject(itemPos);
-            //Need to increment the value of clicked inside
+            System.out.println("4");
             int clickVal  = ((int)selectedItem.get("clickNum"))+1;
+            System.out.println("5");
             selectedItem.put("clickNum", clickVal);
+            System.out.println("6");
+            final String json = selectedItem.toString();
             System.out.println("Incremented");
 
         } catch (JSONException e) {
