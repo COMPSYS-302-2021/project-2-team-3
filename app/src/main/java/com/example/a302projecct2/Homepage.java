@@ -1,6 +1,8 @@
 package com.example.a302projecct2;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -54,6 +56,11 @@ public class Homepage extends AppCompatActivity {
                 String searchQuery = vh.SearchBarTxt.getText().toString();
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
                 intent.putExtra("searchQuery", searchQuery);
+                //intent.putExtra("searchQuery", searchQuery);
+                SharedPreferences SPref = getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
+                SharedPreferences.Editor SearchEditor = SPref.edit();
+                SearchEditor.putString("Query",searchQuery);
+                SearchEditor.commit();
                 startActivity(intent);
                 /**
                  * Change it so we create data variable in searchACtivity class
