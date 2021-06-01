@@ -65,6 +65,7 @@ public class ListDishes extends AppCompatActivity {
         else {
             Intent intent = new Intent(getBaseContext(),Homepage.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 
         }
     }

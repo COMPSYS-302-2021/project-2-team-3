@@ -17,19 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        System.out.println("Starting application");
-//        Connectivity conn = new Connectivity(getBaseContext());
-//        while (!connected){
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    if(conn.isConnected()){
-//                        connected = true;
-//                        System.out.println("Connected to internet");
-//                    }
-//                }
-//            }, SPLASH_TIME);
-//        }
         Intent intent = new Intent(this, Homepage.class);
         startActivity(intent);
 

@@ -1,5 +1,6 @@
 package com.example.a302projecct2;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,8 +18,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.bumptech.glide.Glide;
 import com.example.a302projecct2.dataprovider.ItemClass;
 
@@ -78,10 +81,15 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                     Edited.apply();
 
                     ctx.startActivity(intent);
+
+
                 }
+
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {

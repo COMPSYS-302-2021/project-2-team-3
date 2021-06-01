@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.a302projecct2.dataprovider.DataProviderClass;
 
 public class viewItemPage extends AppCompatActivity {
@@ -63,14 +64,17 @@ public class viewItemPage extends AppCompatActivity {
             if (PreviousPage.equals("Search")){
                 Intent intent = new Intent(getBaseContext(),SearchActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
             else if(PreviousPage.equals("List")){
                 Intent intent = new Intent(getBaseContext(),ListDishes.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
             else {
                 Intent intent = new Intent(getBaseContext(),Homepage.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
         }
     }
