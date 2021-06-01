@@ -1,12 +1,15 @@
 package com.example.a302projecct2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.a302projecct2.dataprovider.DataProviderClass;
+
 
 public class viewItemPage extends AppCompatActivity {
     public class ViewItemsViewHolder {
@@ -38,6 +41,30 @@ public class viewItemPage extends AppCompatActivity {
         vh.ItemDescription.setText(getIntent().getStringExtra("itemDescription"));
         vh.ItemPrice.setText(getIntent().getStringExtra("itemPrice"));
 
+    }
+    @Override
+    public void onBackPressed () {
+        Connectivity Con= new Connectivity(getBaseContext());
+        if (!Con.isConnected()) {
+            //showNotConnectedDialog();
+            Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
+        }
+        else{
+            String PreviousPage = getIntent().getStringExtra("prevPage");
+            System.out.println(PreviousPage);
+            if (PreviousPage.equals("Search")){
+                Intent intent = new Intent(getBaseContext(),Homepage.class);
+                startActivity(intent);
+            }
+            else if(PreviousPage.equals("List")){
+                Intent intent = new Intent(getBaseContext(),ListDishes.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getBaseContext(),Homepage.class);
+                startActivity(intent);
+            }
+        }
     }
 
 }

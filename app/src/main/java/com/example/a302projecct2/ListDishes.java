@@ -2,6 +2,7 @@ package com.example.a302projecct2;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -46,6 +47,14 @@ public class ListDishes extends AppCompatActivity {
         /**
          * If user searches for dish go to SearchActivity and show results*/
 
+    }
+    @Override
+    public void onBackPressed () {
+        Connectivity Con= new Connectivity(getBaseContext());
+        if (!Con.isConnected()) {
+            //showNotConnectedDialog();
+            Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
+        }
     }
 
 }

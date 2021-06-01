@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
@@ -13,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.bumptech.glide.Glide;
 
@@ -54,7 +53,8 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                 //Check if device is connected to internet, if not show message else go to details
                 //activity for the selected item
                 if(!isConnected()){
-                    showNotConnectedDialog();
+                    //showNotConnectedDialog();
+                    Toast.makeText(ctx, "Cannot connect to the internet", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Intent intent = new Intent(ctx, viewItemPage.class);
@@ -62,6 +62,7 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                     intent.putExtra("itemPrice", topPickItems[position].getItemPrice());
                     intent.putExtra("itemDescription", topPickItems[position].getItemDescription());
                     intent.putExtra("itemImages", topPickItems[position].getItemImages());
+                    intent.putExtra("prevPage", "Home");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
                 }

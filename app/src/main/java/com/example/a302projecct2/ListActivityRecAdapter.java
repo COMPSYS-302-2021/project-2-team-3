@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -58,7 +59,8 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
             public void onClick(View v) {
 
                 if(!isConnected()){
-                    showNotConnectedDialog();
+                    //showNotConnectedDialog();
+                    Toast.makeText(ctx, "Cannot connect to the internet", Toast.LENGTH_LONG).show();
                 }
                 else{
 
@@ -67,6 +69,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                     intent.putExtra("itemPrice",items.get(position).getItemPrice());
                     intent.putExtra("itemDescription",items.get(position).getItemDescription());
                     intent.putExtra("itemImages", items.get(position).getItemImages());
+                    intent.putExtra("prevPage", "List");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
 
