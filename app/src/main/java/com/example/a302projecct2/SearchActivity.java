@@ -1,5 +1,16 @@
 package com.example.a302projecct2;
 
+<<<<<<< Updated upstream
+=======
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+>>>>>>> Stashed changes
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,8 +52,9 @@ public class SearchActivity extends AppCompatActivity {
         //Constructor takes in search term and we create instance of dataprovider and search through all
         //the names to find the dish that we are looking for whatever matches then save them in a array
         //of itemclass which is then passed into the intent of the
+        SharedPreferences SearchPref = getApplicationContext().getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
+        searchQuery = SearchPref.getString("Query","");
 
-        searchQuery = getIntent().getStringExtra("searchQuery");
         allDishes  = data.getAllDishes();
 
         //Search through all dishes to find dish that contains that name
@@ -65,6 +77,7 @@ public class SearchActivity extends AppCompatActivity {
             LinearLayoutManager SearchManager= new LinearLayoutManager(this);
             SearchManager.setOrientation(LinearLayoutManager.VERTICAL);
             vh.RclSearch.setLayoutManager(SearchManager);
+            vh.txtSearch.setText("Search results for \n" + searchQuery);
         }
 
 

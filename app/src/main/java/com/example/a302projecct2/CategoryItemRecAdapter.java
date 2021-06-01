@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
@@ -67,6 +68,10 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                     intent.putExtra("CategoryName", categoryNames[position].getCategoryName());
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("position", position);
+                    SharedPreferences SPref = ctx.getSharedPreferences("categoryName",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor Edited = SPref.edit();
+                    Edited.putString("Name",categoryNames[position].getCategoryName());
+                    Edited.commit();
                     ctx.startActivity(intent);
                 }
             }

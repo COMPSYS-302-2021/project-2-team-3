@@ -1,5 +1,8 @@
 package com.example.a302projecct2;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -27,6 +30,8 @@ public class ListDishes extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         ListActivityViewHolder vh = new ListActivityViewHolder();
 
+        SharedPreferences ShPref = getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
+        String categoryName = ShPref.getString("Name","");
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
         int pos = getIntent().getIntExtra("position", 0);
@@ -39,7 +44,7 @@ public class ListDishes extends AppCompatActivity {
         LinearLayoutManager DishesManager = new LinearLayoutManager(this);
         DishesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclDishes.setLayoutManager(DishesManager);
-        vh.CuisineName.setText(getIntent().getStringExtra("CategoryName"));
+        vh.CuisineName.setText(categoryName);
 
         //Setting up recycler view for categories
 
@@ -47,5 +52,21 @@ public class ListDishes extends AppCompatActivity {
          * If user searches for dish go to SearchActivity and show results*/
 
     }
+<<<<<<< Updated upstream
+=======
+    @Override
+    public void onBackPressed () {
+        Connectivity Con= new Connectivity(getBaseContext());
+        if (!Con.isConnected()) {
+            //showNotConnectedDialog();
+            Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent intent = new Intent(getBaseContext(),Homepage.class);
+            startActivity(intent);
+
+        }
+    }
+>>>>>>> Stashed changes
 
 }

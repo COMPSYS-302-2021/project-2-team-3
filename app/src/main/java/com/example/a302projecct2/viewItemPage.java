@@ -39,5 +39,31 @@ public class viewItemPage extends AppCompatActivity {
         vh.ItemPrice.setText(getIntent().getStringExtra("itemPrice"));
 
     }
+<<<<<<< Updated upstream
+=======
+    @Override
+    public void onBackPressed () {
+        Connectivity Con= new Connectivity(getBaseContext());
+        if (!Con.isConnected()) {
+            //showNotConnectedDialog();
+            Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
+        }
+        else{
+            String PreviousPage = getIntent().getStringExtra("prevPage");
+            if (PreviousPage.equals("Search")){
+                Intent intent = new Intent(getBaseContext(),SearchActivity.class);
+                startActivity(intent);
+            }
+            else if(PreviousPage.equals("List")){
+                Intent intent = new Intent(getBaseContext(),ListDishes.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getBaseContext(),Homepage.class);
+                startActivity(intent);
+            }
+        }
+    }
+>>>>>>> Stashed changes
 
 }
