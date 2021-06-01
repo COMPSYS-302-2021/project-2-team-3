@@ -61,10 +61,6 @@ public class Homepage extends AppCompatActivity {
                  */
             }
         });
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     }
 
 }
