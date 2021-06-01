@@ -79,6 +79,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                         JsonFuncs funcs = new JsonFuncs(ctx);
 
 
+
                         Intent intent = new Intent(ctx, viewItemPage.class);
                         intent.putExtra("itemName",items.get(position).getItemName());
                         intent.putExtra("itemPrice",items.get(position).getItemPrice());
