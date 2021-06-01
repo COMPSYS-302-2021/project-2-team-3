@@ -7,17 +7,21 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     tools:context=".ListDishes"
-    android:id="@+id/searchParent">
+    android:id="@+id/searchParent"
+    android:background="#e59866"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/CuisineName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_margin="15dp"
         android:text="Category Name \n"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="24sp"/>
+        android:textSize="44sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

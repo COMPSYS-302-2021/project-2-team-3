@@ -46,7 +46,7 @@ public class ListDishes extends AppCompatActivity {
         LinearLayoutManager DishesManager = new LinearLayoutManager(this);
         DishesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclDishes.setLayoutManager(DishesManager);
-        vh.CuisineName.setText(categoryName);
+        vh.CuisineName.setText(categoryName + "\n Cuisine");
 
         //Setting up recycler view for categories
 

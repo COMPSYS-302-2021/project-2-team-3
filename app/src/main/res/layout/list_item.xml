@@ -2,7 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardViewProperties"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cvListItem">
+    android:id="@+id/cvListItem"
+    app:cardBackgroundColor="#f6ddcc"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/itemConstraintProperties">

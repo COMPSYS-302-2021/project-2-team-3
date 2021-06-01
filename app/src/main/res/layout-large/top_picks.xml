@@ -2,7 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardViewProperties"
     android:id="@+id/cvTopPicks"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#f6ddcc">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             style="@style/itemConstraintProperties">

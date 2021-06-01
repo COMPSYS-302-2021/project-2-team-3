@@ -2,7 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardViewProperties"
     android:id="@+id/cvCategoryItem"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#f6ddcc"
+    app:cardCornerRadius="15dp"
+    android:layout_width="match_parent"
+    >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/category_item_constraint"
@@ -23,11 +27,12 @@
                 android:padding="15dp"
                 android:text="Cuisine"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgFlag"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

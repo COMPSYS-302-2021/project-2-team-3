@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#e59866"
+    android:padding="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,7 +31,8 @@
             android:layout_below="@+id/ImageSlider"
             android:textSize="50dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/ItemDescription"
@@ -41,6 +44,7 @@
             android:layout_below="@+id/ItemTitle"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="5dp"
+            android:textColor="@color/black"
             />
 
         <Button
@@ -52,7 +56,8 @@
             android:textSize="30dp"
             android:layout_marginLeft="90dp"
             android:layout_marginTop="50dp"
-            android:text="Buy" />
+            android:text="Buy"
+            android:backgroundTint="#ff5533"/>
         <TextView
             android:id="@+id/ItemPrice"
             android:layout_width="wrap_content"
@@ -63,6 +68,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="60dp"
             android:layout_below="@+id/ItemDescription"
+            android:textColor="@color/black"
             />
 
     </RelativeLayout>

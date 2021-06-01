@@ -4,7 +4,9 @@
     android:layout_width="wrap_content"
     android:layout_margin="10dp"
     android:id="@+id/cvTopPicks"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#f6ddcc"
+    app:cardCornerRadius="10dp">
 
     <RelativeLayout
         style="@style/itemRelProperties"
