@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
@@ -56,17 +57,29 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
         holder.cvListItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                System.out.println("Clicked");
                 if(!isConnected()){
                     showNotConnectedDialog();
                 }
                 else{
 
+                    SharedPreferences ShPref = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
+                    String categoryName = ShPref.getString("Name","");
+                    int cuisinePos = ShPref.getInt("cuisinePos", 0);
+                    JsonFuncs jsonFuncs = new JsonFuncs(ctx);
+                    System.out.println("cuisinePos: " +cuisinePos+", position: "+ position);
+                    jsonFuncs.incrementCount(cuisinePos,position);
+
                     Intent intent = new Intent(ctx, viewItemPage.class);
                     intent.putExtra("itemName",items.get(position).getItemName());
                     intent.putExtra("itemPrice",items.get(position).getItemPrice());
                     intent.putExtra("itemDescription",items.get(position).getItemDescription());
+<<<<<<< Updated upstream
                     //intent.putExtra("itemImages", items.get(position).getItemImages());
+=======
+                    intent.putExtra("itemImages", items.get(position).getItemImages());
+                    intent.putExtra("prevPage", "List");
+>>>>>>> Stashed changes
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
 
