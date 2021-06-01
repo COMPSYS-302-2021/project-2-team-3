@@ -32,21 +32,4 @@ public class Connectivity {
 
     }
 
-    private void showNotConnectedDialog(){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-        builder.setMessage("Please connect to the internet to proceed")
-                .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ctx.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                });
-        builder.show();
-
-
-    }
-
-
 }
