@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.a302projecct2.dataprovider.ItemClass;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRecAdapter.CategoryItemViewHolder>{
@@ -65,13 +66,14 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                 else {
 
                     Intent intent = new Intent(ctx, ListDishes.class);
-                    intent.putExtra("CategoryName", categoryNames[position].getCategoryName());
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("position", position);
                     SharedPreferences SPref = ctx.getSharedPreferences("categoryName",Context.MODE_PRIVATE);
                     SharedPreferences.Editor Edited = SPref.edit();
                     Edited.putString("Name",categoryNames[position].getCategoryName());
-                    Edited.commit();
+                    Edited.putInt("cuisinePos", position);
+                    Edited.apply();
+
                     ctx.startActivity(intent);
                 }
             }
@@ -129,6 +131,16 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
                 });
         builder.show();
 
+
+    }
+
+    private HashSet<ItemClass> conv2Set(ArrayList<ItemClass> dishes){
+
+        HashSet<ItemClass> dishesHash = new HashSet<>();
+        for(int i=0; i<dishes.size(); i++){
+            dishesHash.add(dishes.get(i));
+        }
+        return dishesHash;
 
     }
 }

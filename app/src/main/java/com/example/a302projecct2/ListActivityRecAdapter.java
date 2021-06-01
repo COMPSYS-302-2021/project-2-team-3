@@ -68,6 +68,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                     intent.putExtra("itemDescription",items.get(position).getItemDescription());
                     intent.putExtra("itemImages", items.get(position).getItemImages());
                     intent.putExtra("prevPage", "List");
+                    //Shared preference for the array of items
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
 

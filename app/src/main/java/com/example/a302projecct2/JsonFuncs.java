@@ -15,7 +15,8 @@ import java.util.List;
 
 public class JsonFuncs {
 
-    Context ctx;
+    private Context ctx;
+    private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
 
     public JsonFuncs(Context ctx) {
         this.ctx = ctx;
@@ -76,5 +77,22 @@ public class JsonFuncs {
         }
 
         return list.toArray(new String[list.size()]);
+    }
+
+    public void incrementCount(int cuisinePos, int itemPos){
+        try{
+            JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
+            JSONArray cuisineArray = obj.getJSONArray(cusines[cuisinePos]);
+            JSONObject selectedItem = cuisineArray.getJSONObject(itemPos);
+            //Need to increment the value of clicked inside
+            int clickVal  = ((int)selectedItem.get("clickNum"))+1;
+            /**
+             * TODO:put the new click value
+             */
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
