@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
-    android:layout_width="160dp"
+    android:layout_width="wrap_content"
     android:layout_margin="10dp"
     android:id="@+id/cvTopPicks"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/itemConstraintProperties"
+    <RelativeLayout
+        style="@style/itemRelProperties"
         android:gravity="center">
 
         <ImageView
+            android:layout_centerHorizontal="true"
             android:id="@+id/img_top_picks"
             style="@style/itemImagesNormalSize"
             android:layout_marginTop="5dp"
@@ -23,6 +24,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
+            android:layout_centerHorizontal="true"
             android:id="@+id/txtTopPicksName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,8 +39,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_top_picks"
             android:layout_marginTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:paddingBottom="10dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
