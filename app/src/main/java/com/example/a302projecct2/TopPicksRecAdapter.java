@@ -19,6 +19,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.TopPicksViewHolder> {
 
@@ -43,6 +44,7 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
         holder.txtTopPicksName.setText(topPickItems[position].getItemName());
         Glide.with(this.ctx)
                 .load(topPickItems[position].getItemImages()[0])
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgTopPicks);
 

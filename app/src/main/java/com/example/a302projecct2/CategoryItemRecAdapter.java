@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.a302projecct2.dataprovider.ItemClass;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class CategoryItemRecAdapter extends RecyclerView.Adapter<CategoryItemRec
 
         Glide.with(this.ctx)
                 .load(categoryNames[position].getImgFlag())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgFlag);
 

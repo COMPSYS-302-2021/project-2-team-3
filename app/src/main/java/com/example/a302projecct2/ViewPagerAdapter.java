@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.Objects;
 
@@ -54,7 +55,11 @@ class ViewPagerAdapter extends PagerAdapter {
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageViewMain);
 
         // setting the image in the imageView
-        Glide.with(context).load(images[position]).placeholder(R.drawable.ic_launcher_background).into(imageView);
+        Glide.with(context)
+                .load(images[position])
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(imageView);
 
         // Adding the View
         Objects.requireNonNull(container).addView(itemView);

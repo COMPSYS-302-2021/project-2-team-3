@@ -22,6 +22,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.a302projecct2.dataprovider.ItemClass;
 
 import java.util.ArrayList;
@@ -50,11 +51,6 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     //Binds the data to the layout that will be used for each item
     @Override
     public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
-
-            JsonFuncs funcs = new JsonFuncs(ctx);
-            SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
-            int categoryPos = sp.getInt("cuisinePos",0);
-            funcs.incrementCount(categoryPos, position);
             Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
             holder.cvListItem.startAnimation(animation);
 
@@ -62,6 +58,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
             holder.txtItemPrice.setText(items.get(position).getItemPrice());
             Glide.with(this.ctx)
                     .load(items.get(position).getItemImages()[0])
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.ic_launcher_background)
                     .into(holder.imgListItem);
 
@@ -76,7 +73,11 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                     }
                     else{
 
+
                         JsonFuncs funcs = new JsonFuncs(ctx);
+                        SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
+                        int categoryPos = sp.getInt("cuisinePos",0);
+                        funcs.incrementCount(categoryPos, position);
 
 
 

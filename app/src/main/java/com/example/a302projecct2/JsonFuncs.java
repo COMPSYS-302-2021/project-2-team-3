@@ -8,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -56,8 +58,6 @@ public class JsonFuncs {
                         conv2StringArr(dish.getJSONArray("dishImages")));
                 dishes.add(itemDish);
             }
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -81,18 +81,22 @@ public class JsonFuncs {
 
     public void incrementCount(int cuisinePos, int itemPos){
         try{
-            System.out.println("1");
             JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
-            System.out.println("2");
             JSONArray cuisineArray = obj.getJSONArray(cusines[cuisinePos]);
-            System.out.println("3");
             JSONObject selectedItem = cuisineArray.getJSONObject(itemPos);
-            System.out.println("4");
+
+
+
             int clickVal  = ((int)selectedItem.get("clickNum"))+1;
-            System.out.println("5");
             selectedItem.put("clickNum", clickVal);
-            System.out.println("6");
+
+
+
             final String json = selectedItem.toString();
+
+//            try(FileWriter file = new FileWriter("dishes.json")){
+//                file.write(json);
+//            }
             System.out.println("Incremented");
 
         } catch (JSONException e) {

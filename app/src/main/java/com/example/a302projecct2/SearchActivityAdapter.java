@@ -21,6 +21,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.a302projecct2.dataprovider.ItemClass;
 
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
             holder.txtItemPrice.setText(searchResults.get(position).getItemPrice());
             Glide.with(this.ctx)
                     .load(searchResults.get(position).getItemImages()[0])
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.ic_launcher_background)
                     .into(holder.imgListItem);
 
