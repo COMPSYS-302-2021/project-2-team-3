@@ -56,7 +56,6 @@ public class viewItemPage extends AppCompatActivity {
     public void onBackPressed () {
         Connectivity Con= new Connectivity(getBaseContext());
         if (!Con.isConnected()) {
-            //showNotConnectedDialog();
             Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
         }
         else{

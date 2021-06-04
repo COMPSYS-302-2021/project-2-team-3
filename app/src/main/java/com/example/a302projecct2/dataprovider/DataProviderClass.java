@@ -1,8 +1,10 @@
 package com.example.a302projecct2.dataprovider;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.a302projecct2.JsonFuncs;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,19 +12,27 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class DataProviderClass {
 
     private CategoryClass[] cuisinesCategories;
     private ArrayList<ArrayList<ItemClass>> allDishes;
+    private ArrayList<ItemClass> topPicks;
     private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
+    private SharedPreferences prefs;
+    private SharedPreferences topPicksPrefs;
+    private Context ctx;
 
 
     public DataProviderClass(Context ctx) {
+        this.ctx = ctx;
         cuisinesCategories = new CategoryClass[]{
                 new CategoryClass("Japanese", "https://cdn.icon-icons.com/icons2/230/PNG/256/Japan_JP_JPN_392_Flag1_26102.png"),
                 new CategoryClass("Indian", "https://cdn.icon-icons.com/icons2/2087/PNG/512/india_icon_127891.png"),
@@ -40,6 +50,22 @@ public class DataProviderClass {
         allDishes.add(indian);
         allDishes.add(italian);
 
+        topPicks = new ArrayList<ItemClass>();
+        topPicks.add(allDishes.get(0).get(0));
+        topPicks.add(allDishes.get(1).get(0));
+        topPicks.add(allDishes.get(2).get(0));
+        System.out.println("topPicks from constructor length" + topPicks.size());
+
+        topPicksPrefs = ctx.getSharedPreferences("topPicks", MODE_PRIVATE);
+        SharedPreferences.Editor editor = topPicksPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(topPicks);
+        editor.putString("topDishes", json);
+        editor.apply();
+
+
+
+
         //Saving all of the arrays of cusines into one array list
 //        for(int i=0; i<cusines.length; i++){
 //            if(generateData(ctx, cusines[i]) == null){
@@ -50,18 +76,6 @@ public class DataProviderClass {
 //        }
     }
 
-    //Randomly generate top dishes
-    public ItemClass[] getTopDishes(){
-        ItemClass[] topDishes = new ItemClass[allDishes.size()];
-        int pos = (int) (Math.random()*getLongestArrayVal(allDishes));
-
-        //Save item from each cusine into one array for top picks
-        for(int i=0; i<allDishes.size(); i++){
-            topDishes[i] = allDishes.get(i).get(pos);
-        }
-        return topDishes;
-
-    }
 
     public CategoryClass[] getCusinesCategories(){
         return this.cuisinesCategories;

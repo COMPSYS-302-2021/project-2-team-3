@@ -14,14 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a302projecct2.dataprovider.DataProviderClass;
+import com.example.a302projecct2.dataprovider.ItemClass;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class Homepage extends AppCompatActivity {
     public class viewholder {
-//        private EditText SearchBarTxt = findViewById(R.id.SearchBarTxt);
-//        private ImageView SearchBtn = findViewById(R.id.SearchBtn);
+
         private RecyclerView RclTopDishes = findViewById(R.id.RclTopDishes);
         private RecyclerView RclCategories = findViewById(R.id.RclCategories);
         private SearchView searchView = findViewById(R.id.searchView);
+        private SharedPreferences topPicksPref;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,8 +39,17 @@ public class Homepage extends AppCompatActivity {
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
 
+        ArrayList<ItemClass> topDishes = new ArrayList<ItemClass>();
         //Creating recycler view adapters for top dishes and category items
-        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
+        Gson gson = new Gson();
+        vh.topPicksPref = getSharedPreferences("topPicks", MODE_PRIVATE);
+        String json = vh.topPicksPref.getString("topDishes", null);
+        Type type = new TypeToken<ArrayList<ItemClass>>(){}.getType();
+        topDishes = gson.fromJson(json, type);
+
+
+
+        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(topDishes,getBaseContext());
         CategoryItemRecAdapter CatRecAdapter = new CategoryItemRecAdapter(getBaseContext(),data.getAllDishes(),data.getCusinesCategories());
 
         //Setting up recycler view for top dishes

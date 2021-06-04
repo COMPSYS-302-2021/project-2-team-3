@@ -1,12 +1,8 @@
 package com.example.a302projecct2;
 
-import android.app.AlertDialog;
+
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.a302projecct2.dataprovider.*;
+
+import java.util.ArrayList;
 
 public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.TopPicksViewHolder> {
 
-    private com.example.a302projecct2.dataprovider.ItemClass[] topPickItems;
+    private ArrayList<ItemClass> topPickItems;
     private Context ctx;
 
-    public TopPicksRecAdapter(com.example.a302projecct2.dataprovider.ItemClass[] topPickItems, Context ctx) {
+    public TopPicksRecAdapter(ArrayList<ItemClass> topPickItems, Context ctx) {
         this.topPickItems = topPickItems;
         this.ctx = ctx;
     }
@@ -41,9 +40,9 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull TopPicksRecAdapter.TopPicksViewHolder holder, int position) {
-        holder.txtTopPicksName.setText(topPickItems[position].getItemName());
+        holder.txtTopPicksName.setText(topPickItems.get(position).getItemName());
         Glide.with(this.ctx)
-                .load(topPickItems[position].getItemImages()[0])
+                .load(topPickItems.get(position).getItemImages()[0])
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.imgTopPicks);
@@ -61,10 +60,10 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                 }
                 else{
                     Intent intent = new Intent(ctx, viewItemPage.class);
-                    intent.putExtra("itemName", topPickItems[position].getItemName());
-                    intent.putExtra("itemPrice", topPickItems[position].getItemPrice());
-                    intent.putExtra("itemDescription", topPickItems[position].getItemDescription());
-                    intent.putExtra("itemImages", topPickItems[position].getItemImages());
+                    intent.putExtra("itemName", topPickItems.get(position).getItemName());
+                    intent.putExtra("itemPrice", topPickItems.get(position).getItemPrice());
+                    intent.putExtra("itemDescription", topPickItems.get(position).getItemDescription());
+                    intent.putExtra("itemImages", topPickItems.get(position).getItemImages());
                     intent.putExtra("prevPage", "Home");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     ctx.startActivity(intent);
@@ -78,7 +77,7 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
 
     @Override
     public int getItemCount() {
-        return topPickItems.length;
+        return topPickItems.size();
     }
 
     public class TopPicksViewHolder extends RecyclerView.ViewHolder {

@@ -1,6 +1,7 @@
 package com.example.a302projecct2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -19,9 +20,5 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, Homepage.class);
         startActivity(intent);
-
-
-
-
     }
 }
