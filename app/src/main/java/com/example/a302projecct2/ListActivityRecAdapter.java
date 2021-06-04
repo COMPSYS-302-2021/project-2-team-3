@@ -74,10 +74,10 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                     else{
 
 
-                        JsonFuncs funcs = new JsonFuncs(ctx);
-                        SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
-                        int categoryPos = sp.getInt("cuisinePos",0);
-                        funcs.incrementCount(categoryPos, position);
+//                        JsonFuncs funcs = new JsonFuncs(ctx);
+//                        SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
+//                        int categoryPos = sp.getInt("cuisinePos",0);
+//                        funcs.incrementCount(categoryPos, position);
 
 
 

@@ -2,6 +2,7 @@ package com.example.a302projecct2.dataprovider;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 import com.example.a302projecct2.JsonFuncs;
 import com.google.gson.Gson;
@@ -27,6 +28,7 @@ public class DataProviderClass {
     private ArrayList<ItemClass> topPicks;
     private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
     private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
     private SharedPreferences topPicksPrefs;
     private Context ctx;
 
@@ -50,20 +52,23 @@ public class DataProviderClass {
         allDishes.add(indian);
         allDishes.add(italian);
 
-        topPicks = new ArrayList<ItemClass>();
-        topPicks.add(allDishes.get(0).get(0));
-        topPicks.add(allDishes.get(1).get(0));
-        topPicks.add(allDishes.get(2).get(0));
-        System.out.println("topPicks from constructor length" + topPicks.size());
+        prefs = ctx.getSharedPreferences("com.example.a302projecct2", MODE_PRIVATE);
+        if (prefs.getBoolean("firstrun", true)) {
+            prefs.edit().putBoolean("firstrun", false).apply();
+            Toast.makeText(ctx, "FIRST RUN", Toast.LENGTH_SHORT).show();
+            topPicks = new ArrayList<ItemClass>();
+            topPicks.add(allDishes.get(0).get(0));
+            topPicks.add(allDishes.get(1).get(0));
+            topPicks.add(allDishes.get(2).get(0));
+            System.out.println("topPicks from constructor length" + topPicks.size());
 
-        topPicksPrefs = ctx.getSharedPreferences("topPicks", MODE_PRIVATE);
-        SharedPreferences.Editor editor = topPicksPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(topPicks);
-        editor.putString("topDishes", json);
-        editor.apply();
-
-
+            topPicksPrefs = ctx.getSharedPreferences("topPicks", MODE_PRIVATE);
+            editor = topPicksPrefs.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(topPicks);
+            editor.putString("topDishes", json);
+            editor.apply();
+        }
 
 
         //Saving all of the arrays of cusines into one array list
@@ -77,6 +82,9 @@ public class DataProviderClass {
     }
 
 
+
+
+
     public CategoryClass[] getCusinesCategories(){
         return this.cuisinesCategories;
     }
@@ -85,17 +93,6 @@ public class DataProviderClass {
         return this.allDishes;
     }
 
-    //Gets the longest array of food items
-    public int getLongestArrayVal(ArrayList<ArrayList<ItemClass>> arr){
-        int[] lengths = new int[arr.size()];
-        for (int i=0; i<arr.size(); i++){
-            lengths[i] = arr.get(i).size();
-        }
-        Arrays.sort(lengths);
-        return lengths[lengths.length - 1];
-
-
-    }
 }
 
 
