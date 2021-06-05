@@ -30,6 +30,10 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
         this.ctx = ctx;
     }
 
+
+    /**
+     * Inflating layout file for each category and creating viewholder
+     */
     @NonNull
     @Override
     public TopPicksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,6 +42,9 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
         return new TopPicksViewHolder(view);
     }
 
+    /**
+     * Binding data for all ItemClass to each item within inflated layout file
+     */
     @Override
     public void onBindViewHolder(@NonNull TopPicksRecAdapter.TopPicksViewHolder holder, int position) {
         holder.txtTopPicksName.setText(topPickItems.get(position).getItemName());
@@ -75,6 +82,9 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
 
     }
 
+    /**
+     *  Return number of items displayed in recycler view
+     */
     @Override
     public int getItemCount() {
         return topPickItems.size();

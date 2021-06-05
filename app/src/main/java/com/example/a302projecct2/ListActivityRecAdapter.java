@@ -39,7 +39,9 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     }
 
 
-    //Inflating layout for each item within the RecyclerView
+    /**
+     * Inflating layout file for each category and creating viewholder
+     */
     @NonNull
     @Override
     public ListActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,7 +50,9 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
         return new ListActivityViewHolder(view);
     }
 
-    //Binds the data to the layout that will be used for each item
+    /**
+     * Binding data for all ItemClass to each item within inflated layout file
+     */
     @Override
     public void onBindViewHolder(@NonNull ListActivityViewHolder holder, int position) {
             Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
@@ -67,20 +71,12 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
                 public void onClick(View v) {
 
                     Connectivity conn = new Connectivity(ctx);
-
+                    //Check if device is connected to internet before going to viewItemPage
                     if(!conn.isConnected()){
                         Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
                     }
                     else{
-
-
-//                        JsonFuncs funcs = new JsonFuncs(ctx);
-//                        SharedPreferences sp = ctx.getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
-//                        int categoryPos = sp.getInt("cuisinePos",0);
-//                        funcs.incrementCount(categoryPos, position);
-
-
-
+                        //Creating intent to go viewItemPage
                         Intent intent = new Intent(ctx, viewItemPage.class);
                         intent.putExtra("itemName",items.get(position).getItemName());
                         intent.putExtra("itemPrice",items.get(position).getItemPrice());
@@ -104,10 +100,10 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
 
     }
 
-
-
+    /**
+     *  Return number of items displayed in recycler view
+     */
     @Override
-    //Used to return the number of items that would be displayed
     public int getItemCount() {
         return items.size();
     }

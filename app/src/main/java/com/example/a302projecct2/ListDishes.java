@@ -17,19 +17,17 @@ import com.example.a302projecct2.dataprovider.ItemClass;
 import java.util.ArrayList;
 
 public class ListDishes extends AppCompatActivity {
-    public class ListActivityViewHolder {
+    public class ListDishesViewHolder {
 
         private TextView CuisineName = findViewById(R.id.CuisineName);
         private RecyclerView RclDishes = findViewById(R.id.RclDishes);
     }
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        ListActivityViewHolder vh = new ListActivityViewHolder();
+        ListDishesViewHolder vh = new ListDishesViewHolder();
 
         SharedPreferences ShPref = getApplicationContext().getSharedPreferences("categoryName", Context.MODE_PRIVATE);
         String categoryName = ShPref.getString("Name","");
@@ -48,25 +46,22 @@ public class ListDishes extends AppCompatActivity {
         vh.RclDishes.setLayoutManager(DishesManager);
         vh.CuisineName.setText(categoryName + "\n Cuisine");
 
-        //Setting up recycler view for categories
-
-        /**
-         * If user searches for dish go to SearchActivity and show results*/
-
     }
 
+    /**
+     * Used to check when going back to a previous page
+     * It checks whether the device is connected to the
+     * internet before going back to the according page it came from
+     */
     @Override
     public void onBackPressed () {
         Connectivity Con= new Connectivity(getBaseContext());
         if (!Con.isConnected()) {
-            //showNotConnectedDialog();
             Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
         }
         else {
             Intent intent = new Intent(getBaseContext(),Homepage.class);
             startActivity(intent);
-
-
         }
     }
 

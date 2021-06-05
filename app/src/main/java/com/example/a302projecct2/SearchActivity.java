@@ -41,16 +41,14 @@ public class SearchActivity extends AppCompatActivity {
         searchViewHolder vh = new searchViewHolder();
         data = new DataProviderClass(getBaseContext());
         searchResults = new ArrayList<ItemClass>();
-        //Constructor takes in search term and we create instance of dataprovider and search through all
-        //the names to find the dish that we are looking for whatever matches then save them in a array
-        //of itemclass which is then passed into the intent of the
+
+        //Getting search query from shared preferences
         SharedPreferences SearchPref = getApplicationContext().getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
         searchQuery = SearchPref.getString("Query","");
 
         allDishes  = data.getAllDishes();
 
         //Search through all dishes to find dish that contains that name
-        //Maybe add a field that contains an array of "tags" for each item
         for(int i = 0; i<allDishes.size(); i++){
             ArrayList<ItemClass> cuisine = allDishes.get(i);
             for (ItemClass itemClass : cuisine) {
@@ -60,6 +58,8 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
+        //If there are no results show message
+        //else populate recyclerview of search results
         if(searchResults.size() == 0){
             vh.txtSearch.setText("No search results for \n" + searchQuery);
         }
@@ -71,14 +71,16 @@ public class SearchActivity extends AppCompatActivity {
             vh.RclSearch.setLayoutManager(SearchManager);
             vh.txtSearch.setText("Search results for \n" + searchQuery);
         }
-
-
-
     }
+
+    /**
+     * Used to check when going back to a previous page
+     * It checks whether the device is connected to the
+     * internet before going back to the according page it came from
+     */
     public void onBackPressed () {
         Connectivity Con= new Connectivity(getBaseContext());
         if (!Con.isConnected()) {
-            //showNotConnectedDialog();
             Toast.makeText(getBaseContext(), "Cannot connect to the internet", Toast.LENGTH_LONG).show();
         }
         else {

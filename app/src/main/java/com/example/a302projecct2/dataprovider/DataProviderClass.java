@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.example.a302projecct2.JsonFuncs;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -82,9 +84,6 @@ public class DataProviderClass {
     }
 
 
-
-
-
     public CategoryClass[] getCusinesCategories(){
         return this.cuisinesCategories;
     }
@@ -93,7 +92,72 @@ public class DataProviderClass {
         return this.allDishes;
     }
 
+    /**
+     * Get current top dishes item
+     * @return
+     */
+    public ArrayList<ItemClass> getTopDishes(){
+        SharedPreferences topPicksPref;
+        ArrayList<ItemClass> topDishes = new ArrayList<ItemClass>();
+        Gson gson = new Gson();
+        topPicksPref = ctx.getSharedPreferences("topPicks", MODE_PRIVATE);
+        String json = topPicksPref.getString("topDishes", null);
+        Type type = new TypeToken<ArrayList<ItemClass>>(){}.getType();
+        return gson.fromJson(json, type);
+    }
+
+    /**
+     * Updates the arraylist for top dishes
+     */
+    public void updateTopDishes(ItemClass selectedItem){
+
+        ArrayList<ItemClass> updatedTopPicks = new ArrayList<ItemClass>();
+        Boolean containsItem = false;
+
+        //Getting current top picks
+        ArrayList<ItemClass> topDishes = new ArrayList<ItemClass>();
+        topDishes = getTopDishes();
+
+
+        //Check if current top dishes contains the item that was bought
+        for(int i=0; i<topDishes.size(); i++){
+            if(topDishes.get(i).getItemName().equals(selectedItem.getItemName())){
+                containsItem = true;
+                selectedItem = topDishes.get(i);
+                topDishes.remove(i);
+                break;
+            }
+        }
+
+        //update the top picks variable
+        if(containsItem){
+            updatedTopPicks.add(selectedItem);
+            updatedTopPicks.addAll(topDishes);
+        }else{
+
+            updatedTopPicks.add(selectedItem);
+            for(int i=0; i<topDishes.size()-1; i++){
+                updatedTopPicks.add(topDishes.get(i));
+            }
+
+        }
+
+        /**
+         * Commiting back to shared preferences
+         */
+        Gson gson = new Gson();
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences("topPicks", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String json = gson.toJson(updatedTopPicks);
+        editor.putString("topDishes", json);
+        editor.apply();
+
+    }
+
+
 }
+
+
 
 
 

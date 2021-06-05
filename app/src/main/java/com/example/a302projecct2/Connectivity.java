@@ -15,7 +15,9 @@ public class Connectivity {
         this.ctx = ctx;
     }
 
-    //Check if device is connected a network
+    /**
+     * Checks if the device has an internet or data connection
+     */
     public boolean isConnected(){
         ConnectivityManager connectivityManager = (ConnectivityManager)ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -23,12 +25,7 @@ public class Connectivity {
         NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return (wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected());
 
     }
 

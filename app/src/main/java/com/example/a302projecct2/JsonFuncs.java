@@ -24,6 +24,12 @@ public class JsonFuncs {
         this.ctx = ctx;
     }
 
+
+    /**
+     * Loading dishes.json from assets folder
+     * @param ctx
+     * @return
+     */
     public String LoadJsonFromAsset(Context ctx){
         String json = null;
         try{
@@ -41,13 +47,15 @@ public class JsonFuncs {
         return json;
     }
 
-    //Function is called to get the cuisine information we want
-    public ArrayList<ItemClass> generateData(Context ctx, String cusine){
+    /**
+     * Retrieves dishes for cuisine we pass in
+     */
+    public ArrayList<ItemClass> generateData(Context ctx, String cuisine){
 
         ArrayList<ItemClass> dishes = new ArrayList<ItemClass>();
         try {
             JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
-            JSONArray array = obj.getJSONArray(cusine);
+            JSONArray array = obj.getJSONArray(cuisine);
 
             for(int i=0; i<array.length(); i++){
                 JSONObject dish = array.getJSONObject(i);
@@ -65,6 +73,9 @@ public class JsonFuncs {
         return dishes;
     }
 
+    /**
+     * Convert JsonArray to String array
+     */
     public String[] conv2StringArr(JSONArray jsonArray){
         List<String> list = new ArrayList<String>();
 
@@ -77,37 +88,5 @@ public class JsonFuncs {
         }
 
         return list.toArray(new String[list.size()]);
-    }
-
-    /**
-     * Make it for most recentda
-     * @param cuisinePos
-     * @param itemPos
-     */
-
-    public void incrementCount(int cuisinePos, int itemPos){
-        try{
-            JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
-            JSONArray cuisineArray = obj.getJSONArray(cusines[cuisinePos]);
-            JSONObject selectedItem = cuisineArray.getJSONObject(itemPos);
-
-
-
-            int clickVal  = ((int)selectedItem.get("clickNum"))+1;
-            selectedItem.put("clickNum", clickVal);
-
-
-
-            final String json = selectedItem.toString();
-
-//            try(FileWriter file = new FileWriter("dishes.json")){
-//                file.write(json);
-//            }
-            System.out.println("Incremented");
-
-        } catch (JSONException e) {
-            System.out.println("exception");
-            e.printStackTrace();
-        }
     }
 }

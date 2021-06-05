@@ -39,17 +39,8 @@ public class Homepage extends AppCompatActivity {
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
 
-        ArrayList<ItemClass> topDishes = new ArrayList<ItemClass>();
-        //Creating recycler view adapters for top dishes and category items
-        Gson gson = new Gson();
-        vh.topPicksPref = getSharedPreferences("topPicks", MODE_PRIVATE);
-        String json = vh.topPicksPref.getString("topDishes", null);
-        Type type = new TypeToken<ArrayList<ItemClass>>(){}.getType();
-        topDishes = gson.fromJson(json, type);
-
-
-
-        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(topDishes,getBaseContext());
+        //Creating adapters for top picks and categories recycler views
+        TopPicksRecAdapter TopPicksAdapter = new TopPicksRecAdapter(data.getTopDishes(),getBaseContext());
         CategoryItemRecAdapter CatRecAdapter = new CategoryItemRecAdapter(getBaseContext(),data.getAllDishes(),data.getCusinesCategories());
 
         //Setting up recycler view for top dishes
@@ -64,9 +55,8 @@ public class Homepage extends AppCompatActivity {
         CategoriesManager.setOrientation(LinearLayoutManager.VERTICAL);
         vh.RclCategories.setLayoutManager(CategoriesManager);
 
-        /**
-         * If user searches for dish go to SearchActivity and show results
-         */
+
+        //If user searches for dish go to SearchActivity and show results
         vh.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -74,10 +64,9 @@ public class Homepage extends AppCompatActivity {
                 SharedPreferences SPref = getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
                 SharedPreferences.Editor SearchEditor = SPref.edit();
                 SearchEditor.putString("Query",query);
-                SearchEditor.commit();
+                SearchEditor.apply();
                 startActivity(intent);
                 return true;
-
             }
 
             @Override
@@ -85,28 +74,12 @@ public class Homepage extends AppCompatActivity {
                 return false;
             }
         });
-
-//        vh.SearchBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String searchQuery = vh.SearchBarTxt.getText().toString();
-//                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
-//                //intent.putExtra("searchQuery", searchQuery);
-//                SharedPreferences SPref = getSharedPreferences("SearchQuery", Context.MODE_PRIVATE);
-//                SharedPreferences.Editor SearchEditor = SPref.edit();
-//                SearchEditor.putString("Query",searchQuery);
-//                SearchEditor.commit();
-//                startActivity(intent);
-//                /**
-//                 * Change it so we create data variable in searchACtivity class
-//                 */
-//            }
-//        });
     }
     @Override
     public void onBackPressed () {
 
     }
+
 
 
 }

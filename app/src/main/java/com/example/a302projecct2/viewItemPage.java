@@ -28,31 +28,38 @@ public class viewItemPage extends AppCompatActivity {
         private TextView ItemDescription = findViewById(R.id.ItemDescription);
         private TextView ItemPrice = findViewById(R.id.ItemPrice);
         private Button buyButton = findViewById(R.id.buyButton);
+
     }
     ViewPager mViewPager;
     String[] images;
     ViewPagerAdapter mViewPagerAdapter;
     String itemName, itemPrice, itemDescription;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_item_page);
 
+        ViewItemsViewHolder vh = new ViewItemsViewHolder();
+
+        //Getting information passed in from intents
         itemName = getIntent().getStringExtra("itemName");
         itemDescription = getIntent().getStringExtra("itemDescription");
         itemPrice = getIntent().getStringExtra("itemPrice");
         images = getIntent().getStringArrayExtra("itemImages");
-        ViewItemsViewHolder vh = new ViewItemsViewHolder();
+
 
         //Instance of Dataprovider class
         DataProviderClass data = new DataProviderClass(getBaseContext());
 
+        //Setting adapter for viewpager for showing images
         mViewPager = (ViewPager)findViewById(R.id.ImageSlider);
         mViewPagerAdapter = new ViewPagerAdapter(viewItemPage.this,images);
         mViewPager.setAdapter(mViewPagerAdapter);
 
 
+        //Setting the information in the layout file
         vh.ItemTitle.setText(itemName);
         vh.ItemDescription.setText(itemDescription);
         vh.ItemPrice.setText(itemPrice);
@@ -60,42 +67,17 @@ public class viewItemPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(viewItemPage.this, "Purchase Successful", Toast.LENGTH_SHORT).show();
-
-                /**
-                 * Getting current top picks
-                 */
-                SharedPreferences topPicksPref;
-                ArrayList<ItemClass> topDishes = new ArrayList<ItemClass>();
-                //Creating recycler view adapters for top dishes and category items
-                Gson gson = new Gson();
-                topPicksPref = getSharedPreferences("topPicks", MODE_PRIVATE);
-                String json = topPicksPref.getString("topDishes", null);
-                Type type = new TypeToken<ArrayList<ItemClass>>(){}.getType();
-                topDishes = gson.fromJson(json, type);
-
-                /**
-                 * Updating with the new item
-                 */
-                ArrayList<ItemClass> updatedTopPicks = new ArrayList<ItemClass>();
-                ItemClass item = new ItemClass(itemName, itemDescription, itemPrice, images);
-                updatedTopPicks.add(item);
-                for(int i=0; i<topDishes.size()-1; i++){
-                    updatedTopPicks.add(topDishes.get(i));
-                }
-
-                /**
-                 * Commiting back to shared preferences
-                 */
-                SharedPreferences sharedPreferences = getSharedPreferences("topPicks", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                json = gson.toJson(updatedTopPicks);
-                editor.putString("topDishes", json);
-                editor.apply();
-
+                data.updateTopDishes(new ItemClass(itemName, itemDescription, itemPrice, images));
             }
         });
 
     }
+
+    /**
+     * Used to check when going back to a previous page
+     * It checks whether the device is connected to the
+     * internet before going back to the according page it came from
+     */
 
     @Override
     public void onBackPressed () {

@@ -28,22 +28,28 @@ import java.util.ArrayList;
 
 public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAdapter.SearchViewHolder> {
 
-    private Context ctx;
-    private ArrayList<ItemClass> searchResults;
+    private final Context ctx;
+    private final ArrayList<ItemClass> searchResults;
 
     public SearchActivityAdapter(Context ctx, ArrayList<ItemClass> searchResults){
         this.ctx = ctx;
         this.searchResults = searchResults;
     }
 
+    /**
+     * Inflating layout file for showing each item and creating a viewholder
+     */
     @NonNull
     @Override
     public SearchActivityAdapter.SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(this.ctx);
         View view = inflater.inflate(R.layout.list_item, parent, false);
-        return new SearchActivityAdapter.SearchViewHolder(view);
+        return new SearchViewHolder(view);
     }
 
+    /**
+     * Binding data for all items relevant to search query to each item within inflated layout file
+     */
     @Override
     public void onBindViewHolder(@NonNull SearchActivityAdapter.SearchViewHolder holder, int position) {
             Animation animation = AnimationUtils.loadAnimation(ctx, R.anim.slide_in_right);
@@ -62,10 +68,13 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
 
                     Connectivity conn = new Connectivity(ctx);
 
+                    //Check if device is connected to internet before going to viewItemPage
                     if(!conn.isConnected()){
                         Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
                     }
                     else{
+
+                        //Creating intent to go to viewItemPage
 
                         Intent intent = new Intent(ctx, viewItemPage.class);
                         intent.putExtra("itemName",searchResults.get(position).getItemName());
@@ -82,16 +91,22 @@ public class SearchActivityAdapter extends RecyclerView.Adapter<SearchActivityAd
             });
     }
 
+
+    /**
+     *  Return number of items displayed in recycler view
+     */
     @Override
     public int getItemCount() {
         return searchResults.size();
     }
 
-    public class SearchViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtItemName, txtItemPrice;
-        private ImageView imgListItem;
-        private CardView cvListItem;
+    public static class SearchViewHolder extends RecyclerView.ViewHolder {
+
+        private final TextView txtItemName;
+        private final TextView txtItemPrice;
+        private final ImageView imgListItem;
+        private final CardView cvListItem;
 
         public SearchViewHolder(@NonNull View itemView) {
             super(itemView);
