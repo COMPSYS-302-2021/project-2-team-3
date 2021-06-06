@@ -84,7 +84,7 @@
             android:layout_marginTop="50dp"
             android:text="Buy"
             android:textColor="@color/black"
-            android:backgroundTint="#ff5533"/>
+            android:backgroundTint="#f6ddcc"/>
 
         <TextView
             android:id="@+id/ItemPrice"
