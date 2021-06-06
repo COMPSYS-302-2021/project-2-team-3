@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME = 3000;
-    private ImageView imgLoading;
+    private static int SPLASH_TIME = 4000;
     private boolean connected = false;
 
     @Override
@@ -18,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Handler handler = new Handler();
+        Connectivity conn = new Connectivity(getBaseContext());
+
+        while(!connected){
+            connected = conn.isConnected();
+            Toast.makeText(this, "Cannot connect to the internet", Toast.LENGTH_SHORT).show();
+        }
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -25,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },4000);
+        },SPLASH_TIME);
 
 
     }

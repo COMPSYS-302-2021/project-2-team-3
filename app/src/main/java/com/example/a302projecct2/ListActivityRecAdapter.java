@@ -30,8 +30,8 @@ import java.util.ArrayList;
 
 public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRecAdapter.ListActivityViewHolder> {
 
-    private Context ctx;
-    private ArrayList <ItemClass> items;
+    private final Context ctx;
+    private final ArrayList <ItemClass> items;
 
     public ListActivityRecAdapter(Context ctx, ArrayList<ItemClass> items){
         this.ctx = ctx;
@@ -109,11 +109,12 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
     }
 
     //Connecting variables within here to components from the page
-    public class ListActivityViewHolder extends RecyclerView.ViewHolder {
+    public static class ListActivityViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtItemName, txtItemPrice;
-        private ImageView imgListItem;
-        private CardView cvListItem;
+        private final TextView txtItemName;
+        private final TextView txtItemPrice;
+        private final ImageView imgListItem;
+        private final CardView cvListItem;
 
         public ListActivityViewHolder(@NonNull View itemView) {
             super(itemView);

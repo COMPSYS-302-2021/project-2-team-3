@@ -22,8 +22,8 @@ import java.util.ArrayList;
 
 public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.TopPicksViewHolder> {
 
-    private ArrayList<ItemClass> topPickItems;
-    private Context ctx;
+    private final ArrayList<ItemClass> topPickItems;
+    private final Context ctx;
 
     public TopPicksRecAdapter(ArrayList<ItemClass> topPickItems, Context ctx) {
         this.topPickItems = topPickItems;
@@ -54,29 +54,26 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.imgTopPicks);
 
-        holder.cvTopPicks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.cvTopPicks.setOnClickListener(v -> {
 
-                //Check if device is connected to internet, if not show message else go to details
-                //activity for the selected item
-                Connectivity conn = new Connectivity(ctx);
+            //Check if device is connected to internet, if not show message else go to details
+            //activity for the selected item
+            Connectivity conn = new Connectivity(ctx);
 
-                if(!conn.isConnected()){
-                    Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent intent = new Intent(ctx, viewItemPage.class);
-                    intent.putExtra("itemName", topPickItems.get(position).getItemName());
-                    intent.putExtra("itemPrice", topPickItems.get(position).getItemPrice());
-                    intent.putExtra("itemDescription", topPickItems.get(position).getItemDescription());
-                    intent.putExtra("itemImages", topPickItems.get(position).getItemImages());
-                    intent.putExtra("prevPage", "Home");
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    ctx.startActivity(intent);
-                }
-
+            if(!conn.isConnected()){
+                Toast.makeText(ctx, "Please Connect To the Internet", Toast.LENGTH_SHORT).show();
             }
+            else{
+                Intent intent = new Intent(ctx, viewItemPage.class);
+                intent.putExtra("itemName", topPickItems.get(position).getItemName());
+                intent.putExtra("itemPrice", topPickItems.get(position).getItemPrice());
+                intent.putExtra("itemDescription", topPickItems.get(position).getItemDescription());
+                intent.putExtra("itemImages", topPickItems.get(position).getItemImages());
+                intent.putExtra("prevPage", "Home");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ctx.startActivity(intent);
+            }
+
         });
 
 
@@ -90,11 +87,11 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
         return topPickItems.size();
     }
 
-    public class TopPicksViewHolder extends RecyclerView.ViewHolder {
+    public static class TopPicksViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imgTopPicks;
-        private TextView txtTopPicksName;
-        private CardView cvTopPicks;
+        private final ImageView imgTopPicks;
+        private final TextView txtTopPicksName;
+        private final CardView cvTopPicks;
 
         public TopPicksViewHolder(@NonNull  View itemView) {
             super(itemView);

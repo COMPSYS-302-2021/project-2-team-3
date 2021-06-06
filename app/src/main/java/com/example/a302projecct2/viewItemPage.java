@@ -23,11 +23,11 @@ import java.util.ArrayList;
 public class viewItemPage extends AppCompatActivity {
     public class ViewItemsViewHolder {
 
-        private ViewPager ImageSlider = findViewById(R.id.ImageSlider);
-        private TextView ItemTitle = findViewById(R.id.ItemTitle);
-        private TextView ItemDescription = findViewById(R.id.ItemDescription);
-        private TextView ItemPrice = findViewById(R.id.ItemPrice);
-        private Button buyButton = findViewById(R.id.buyButton);
+        private final ViewPager ImageSlider = findViewById(R.id.ImageSlider);
+        private final TextView ItemTitle = findViewById(R.id.ItemTitle);
+        private final TextView ItemDescription = findViewById(R.id.ItemDescription);
+        private final TextView ItemPrice = findViewById(R.id.ItemPrice);
+        private final Button buyButton = findViewById(R.id.buyButton);
 
     }
     ViewPager mViewPager;

@@ -72,15 +72,6 @@ public class DataProviderClass {
             editor.apply();
         }
 
-
-        //Saving all of the arrays of cusines into one array list
-//        for(int i=0; i<cusines.length; i++){
-//            if(generateData(ctx, cusines[i]) == null){
-//                System.out.println("Value is null");
-//            }
-//            System.out.println((generateData(ctx, cusines[i])).toString());
-//            allDishes.add(generateData(ctx, cusines[i])); //Issue here
-//        }
     }
 
 

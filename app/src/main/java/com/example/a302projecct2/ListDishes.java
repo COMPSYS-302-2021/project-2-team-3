@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class ListDishes extends AppCompatActivity {
     public class ListDishesViewHolder {
 
-        private TextView CuisineName = findViewById(R.id.CuisineName);
-        private RecyclerView RclDishes = findViewById(R.id.RclDishes);
+        private final TextView CuisineName = findViewById(R.id.CuisineName);
+        private final RecyclerView RclDishes = findViewById(R.id.RclDishes);
     }
 
     @Override

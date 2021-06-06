@@ -18,7 +18,6 @@ import java.util.List;
 public class JsonFuncs {
 
     private Context ctx;
-    private String[] cusines = {"japanese_dishes", "indian_dishes", "italian_dishes"};
 
     public JsonFuncs(Context ctx) {
         this.ctx = ctx;
@@ -54,7 +53,7 @@ public class JsonFuncs {
 
         ArrayList<ItemClass> dishes = new ArrayList<ItemClass>();
         try {
-            JSONObject obj = new JSONObject(LoadJsonFromAsset(ctx));
+            JSONObject obj = new JSONObject(LoadJsonFromAsset(this.ctx));
             JSONArray array = obj.getJSONArray(cuisine);
 
             for(int i=0; i<array.length(); i++){
