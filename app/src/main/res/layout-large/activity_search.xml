@@ -2,34 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center"
     tools:context=".SearchActivity"
     android:id="@+id/searchParent"
-    android:background="#e59866"
-    android:padding="10dp">
+    style="@style/rootInfo">
 
     <TextView
         android:id="@+id/txtSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        style="@style/listingItemsText"
         android:text="Search Results for \n"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="60sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textSize="60sp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RclSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtSearch"
-        android:layout_centerHorizontal="true"
-        />
+        style="@style/listingRecView"
+        android:layout_below="@+id/txtSearch" />
 
 </RelativeLayout>

@@ -1,38 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#e59866"
-    android:padding= "10dp">
+    style="@style/rootInfo">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/twoMatchParents"
         android:padding="30dp"
         tools:context=".viewItemPage">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/viewItemCV"
             android:id="@+id/imgSlideCV"
-            app:cardBackgroundColor="#f6ddcc"
-            android:layout_centerHorizontal="true"
-            app:cardCornerRadius="20dp"
-            android:elevation="10dp">
+            android:elevation="10dp"
+            app:cardCornerRadius="30dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                app:cardBackgroundColor="#f6ddcc"
+                style="@style/viewItemCV"
                 app:cardCornerRadius="30dp"
                 android:layout_margin="15dp">
 
                 <androidx.viewpager.widget.ViewPager
-                    android:layout_margin="0dp"
                     android:id="@+id/ImageSlider"
                     android:layout_width="400dp"
                     android:layout_height="400dp"
@@ -43,76 +33,53 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="#f6ddcc"
+            style="@style/viewItemCV"
             android:layout_below="@id/imgSlideCV"
             android:id="@+id/cvInfo"
-            android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
-            app:cardCornerRadius="15dp"
+            app:cardCornerRadius="30dp"
             app:cardElevation="10dp">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                style="@style/twoMatchParents">
 
                 <TextView
+                    style="@style/cardTextViewStyle"
                     android:id="@+id/ItemDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Description"
                     android:textSize="30dp"
                     android:layout_alignParentLeft="true"
                     android:layout_below="@+id/ItemTitle"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/black"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="10dp"/>
 
                 <TextView
+                    style="@style/cardTextViewStyle"
                     android:id="@+id/ItemTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:text="Item Name"
-                    android:gravity="center"
                     android:textSize="75dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
-
-
-
-
+                    android:textStyle="bold"/>
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/buyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            style="@style/buyBtnStyle"
             android:layout_below="@+id/cvInfo"
             android:textSize="45dp"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="50dp"
-            android:text="Buy"
-            android:textColor="@color/black"
-            android:backgroundTint="#f6ddcc"/>
+            android:layout_marginTop="50dp" />
+
+
         <TextView
+            style="@style/priceTxtStyle"
             android:id="@+id/ItemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$5.99"
             android:textSize="45dp"
-            android:layout_toRightOf="@+id/buyButton"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="55dp"
-            android:layout_below="@+id/cvInfo"
-            android:textColor="@color/black"
             />
 
     </RelativeLayout>

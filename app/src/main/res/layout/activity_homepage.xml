@@ -20,7 +20,8 @@
 
         <TextView
             style="@style/homepageText"
-            android:text="For You"/>
+            android:text="For You"
+            android:textSize="36sp"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -29,7 +30,8 @@
 
         <TextView
             style="@style/homepageText"
-            android:text="Cuisines"/>
+            android:text="Cuisines"
+            android:textSize="36sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclCategories"

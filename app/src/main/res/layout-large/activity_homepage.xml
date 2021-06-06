@@ -14,38 +14,28 @@
         android:orientation="vertical"
         tools:context=".Homepage"
         android:padding="16dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        style="@style/twoMatchParents">
 
 
         <SearchView
             android:id= "@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/twoMatchParents"
             android:queryHint="Search"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Top Dishes"
-            android:textSize= "60sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            style="@style/homepageText"
+            android:text="For you"
+            android:textSize= "60sp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclTopDishes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            style="@style/wrapHeight" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/homepageText"
             android:text="Cuisines"
-            android:textSize= "60sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/black"/>
+            android:textSize= "60sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclCategories"
