@@ -167,6 +167,61 @@
         <item name="layout_constraintStart_toEndOf">@+id/imgFlag</item>
     </style>
 
+    <style name="listPriceTxt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">Price</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="layout_constraintStart_toStartOf">@id/txtItemName</item>
+        <item name="layout_constraintTop_toBottomOf">@id/txtItemName</item>
+    </style>
+
+    <style name="listNameTxt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">Item Name</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="layout_constraintEnd_toEndOf">@id/parentLayout</item>
+        <item name = "layout_constraintStart_toEndOf">@id/imgCV</item>
+        <item name = "layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="listItemCV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name = "layout_constraintBottom_toBottomOf">parent</item>
+        <item name = "layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="topPicksTxt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">Dish Name</item>
+        <item name="android:layout_below">@+id/cvIMG</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@+id/cvIMG</item>
+        <item name = "layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="topPicksImg">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="layout_constraintBottom_toTopOf">@+id/txtTopPicksName</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="android:src">@drawable/ic_launcher_foreground</item>
+    </style>
+
+    <style name="topPicksImgCV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name = "cardCornerRadius">15dp</item>
+    </style>
+
 
 
 

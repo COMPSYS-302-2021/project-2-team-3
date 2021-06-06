@@ -8,37 +8,27 @@
     app:cardBackgroundColor="#f6ddcc"
     app:cardCornerRadius="15dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/itemConstraintProperties">
+        <RelativeLayout
+            style="@style/itemRelProperties">
 
-            <ImageView
-                android:id="@+id/img_top_picks"
-                style="@style/itemImagesLargeSize"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+            <androidx.cardview.widget.CardView
+                style="@style/topPicksImgCV"
+                android:id="@+id/cvIMG">
+
+                <ImageView
+                    style="@style/topPicksImg"
+                    android:id="@+id/img_top_picks"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"/>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:gravity="center"
+                style="@style/topPicksTxt"
                 android:id="@+id/txtTopPicksName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_top_picks"
-                android:text="Dish Name"
-                android:textColor="@color/black"
                 android:textSize="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_top_picks"
-                app:layout_constraintVertical_bias="0.0" />
+                android:layout_marginTop="15dp"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

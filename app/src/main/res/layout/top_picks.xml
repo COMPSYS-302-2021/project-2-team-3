@@ -6,51 +6,30 @@
     android:id="@+id/cvTopPicks"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="#f6ddcc"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="15dp">
 
     <RelativeLayout
-        style="@style/itemRelProperties"
-        android:gravity="center">
+        style="@style/itemRelProperties">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cvIMG"
-            android:layout_centerHorizontal="true"
-            app:cardCornerRadius="15dp">
+            style="@style/topPicksImgCV"
+            android:id="@+id/cvIMG">
 
             <ImageView
-                android:layout_centerHorizontal="true"
+                style="@style/topPicksImg"
                 android:id="@+id/img_top_picks"
-                style="@style/itemImagesNormalSize"
-                app:layout_constraintBottom_toTopOf="@+id/txtTopPicksName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"/>
 
         </androidx.cardview.widget.CardView>
 
 
 
         <TextView
-            android:layout_centerHorizontal="true"
+            style="@style/topPicksTxt"
             android:id="@+id/txtTopPicksName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cvIMG"
-            android:gravity="center"
             android:text="Dish Name"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvIMG"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="10dp" />
+            android:textSize="18dp" />
 
     </RelativeLayout>
 
