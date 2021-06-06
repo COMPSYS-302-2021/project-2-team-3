@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/cardViewProperties"
+    style="@style/LargeCardViewProperties"
+    android:id="@+id/cvCategoryItem"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#f6ddcc">
+    app:cardBackgroundColor="#f6ddcc"
+    app:cardCornerRadius="25dp"
+    android:layout_centerHorizontal="true"
+    >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/category_item_constraint"
@@ -16,14 +20,14 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/txtCusine"
+                android:id="@+id/txtCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:gravity="center"
                 android:text="Cuisine"
                 android:textColor="@color/black"
-                android:textSize="45sp"
-                android:padding="20dp"
+                android:textSize="60sp"
+                android:padding="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgFlag"
                 app:layout_constraintTop_toTopOf="parent" />
