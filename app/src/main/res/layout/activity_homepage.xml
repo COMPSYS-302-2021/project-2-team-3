@@ -19,25 +19,17 @@
             android:queryHint="Search"/>
 
         <TextView
-            style="@style/twoWrapContents"
-            android:text="For You"
-            android:textSize= "36sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="#000000"/>
+            style="@style/homepageText"
+            android:text="For You"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclTopDishes"
-            style="@style/wrapHeight" />
+            style="@style/wrapHeight"/>
 
         <TextView
-            style="@style/twoWrapContents"
-            android:text="Cuisines"
-            android:textSize= "36sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="#000000"/>
+            style="@style/homepageText"
+            android:text="Cuisines"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclCategories"
