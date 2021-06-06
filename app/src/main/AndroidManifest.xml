@@ -17,7 +17,8 @@
         <activity android:name=".ListDishes" />
         <activity android:name=".Homepage" />
         <activity android:name=".viewItemPage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
