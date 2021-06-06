@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#e59866">
 
     <ImageView
         android:id="@+id/imgLoading"
-        android:layout_width="375dp"
-        android:layout_height="551dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="464dp"
+        android:layout_height="725dp"
+        android:src="@drawable/feast_cuisine_with_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/feast_cuisine"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
