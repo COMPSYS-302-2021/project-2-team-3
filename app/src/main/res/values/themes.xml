@@ -42,6 +42,7 @@
         <item name= "android:padding">8dp</item>
         <item name= "cardElevation">15dp</item>
         <item name= "android:layout_centerHorizontal">true</item>
+        <item name= "android:layout_gravity">center_horizontal</item>
     </style>
 
     <style name = "itemImagesNormalSize">
@@ -65,7 +66,7 @@
     <style name="itemConstraintProperties">
         <item name = "android:layout_width">match_parent</item>
         <item name = "android:layout_height">match_parent</item>
-        <item name = "android:layout_margin">5dp</item>
+        <item name = "android:layout_margin">10dp</item>
     </style>
 
     <style name="customAnim" parent = "@android:style/Animation.Activity">

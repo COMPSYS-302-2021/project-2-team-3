@@ -31,7 +31,7 @@
             android:textSize= "60sp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textColor="#000000"/>
+            android:textColor="@color/black"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -45,12 +45,13 @@
             android:textSize= "60sp"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:textColor="#000000"/>
+            android:textColor="@color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RclCategories"
             android:layout_width="match_parent"
             android:layout_height="597dp"
+            android:layout_gravity="center"
             android:nestedScrollingEnabled="true" />
 
 
