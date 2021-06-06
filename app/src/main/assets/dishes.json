@@ -14,9 +14,9 @@
       "dishName": "Ramen",
       "dishDescription": "A wheat noodles bowl served in a soy sauce or miso soup, topped with green onion, slices of pork, egg and seaweed",
       "dishPrice": "$12",
-      "dishImages": ["https://glebekitchen.com/wp-content/uploads/2017/04/tonkotsuramenfront.jpg",
-                     "https://www.thedenizen.co.nz/wp-content/uploads/2020/07/FEATURE-IMAGE-ramen.jpg",
-                      "https://www.theflavorbender.com/wp-content/uploads/2019/01/Easy-Chicken-Ramen-Featured-500x375.jpg"
+      "dishImages": ["https://assets.epicurious.com/photos/54ad70036529d92b2c046e6b/master/pass/51187270_shoyu-ramen_1x1.jpg",
+                     "https://www.yummymummykitchen.com/wp-content/uploads/2017/02/easy-ramen-recipe-vegan.jpg",
+                     "https://gastroplant.com/wp-content/uploads/2019/08/1406_Vegan-Shio-Ramen_550.jpg"
                     ]
     },
     {
@@ -34,7 +34,7 @@
       "dishPrice": "$5.50",
       "dishImages": ["https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/okonomiyaki-with-miyazakigyu-w-a7e0b9.jpg",
                      "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/japanese-pork-fried-rice-omelette-with-okonomiyaki-sauce-omurice-reci...-1968997.jpg",
-                     "https://media-cdn.tripadvisor.com/media/photo-s/14/71/a4/db/okonomiyaki.jpg"
+                     "https://www.196flavors.com/wp-content/uploads/2019/11/okonomiyaki-5-FP.jpg"
                     ]
     },
     {
@@ -59,9 +59,9 @@
       "dishName": "Yakitori",
       "dishDescription": "Grilled chicken skewers made from bite sized pieces of meat from all different parts of the chicken, such as the breasts, thighs, skin, liver and other innards.",
       "dishPrice": "$1",
-      "dishImages": ["https://www.seriouseats.com/thmb/eGj5y4jNzg09PM0BHxTyPv9jwRE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__06__20160606-yakitori-negima-13-61803f895fdc4c138f56e09dbc24648f.jpg",
+      "dishImages": ["https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2019%2F08%2F26230802%2F3756919.jpg",
                      "https://www.jessicagavin.com/wp-content/uploads/2015/05/chicken-yakitori-1200.jpg",
-                     "https://media-cdn.tripadvisor.com/media/photo-s/06/91/0a/f6/ken-yakitori-bar.jpg"
+                     "https://d47gxy3fatgwk.cloudfront.net/wp-content/uploads/2018/07/2018.07.05_Katie-172-768x768.jpg"
                     ]
     },
     {
@@ -119,17 +119,17 @@
       "dishDescription": "Creamy and delicious Mango Kulfi is the India version of Mango Ice Cream! Made with milk, milk solids, nuts and flavored with cardamom this kulfi is the ultimate summer treat!",
       "dishPrice": "$8",
       "dishImages": ["https://www.whiskaffair.com/wp-content/uploads/2020/06/Mango-Kulfi-2-3.jpg",
-        "https://www.cookwithmanali.com/wp-content/uploads/2018/05/Indian-Mango-Kulfi-500x500.jpg",
-        "http://www.relishthebite.com/wp-content/uploads/2015/06/MangoKulfi-4-1024x1024.jpg"
+                     "https://www.cookwithmanali.com/wp-content/uploads/2018/05/Indian-Mango-Kulfi-500x500.jpg",
+                     "https://www.196flavors.com/wp-content/uploads/2015/06/Mango-Kulfi-FP1.jpg"
       ]
     },
     {
       "dishName": "Gulab Jamun",
       "dishDescription": "This delicious treat consists of soft, melt-in-your-mouth, fried dumplings that are traditionally made of thickened or reduced milk and then soaked in a sugar syrup made with rose water",
       "dishPrice": "$8",
-      "dishImages": ["https://static.toiimg.com/thumb/63799510.cms?imgsize=1091643&width=800&height=800",
-        "https://www.cookwithmanali.com/wp-content/uploads/2018/05/Indian-Mango-Kulfi-500x500.jpghttps://www.alicaspepperpot.com/wp-content/uploads/2014/03/gj4.jpg",
-        "https://img-global.cpcdn.com/recipes/520c48c954ddb877/400x400cq70/photo.jpg"
+      "dishImages": ["https://thebellyrulesthemind.net/wp-content/uploads/2021/02/Gulab-Jamun-2-720x720.jpg",
+                     "https://www.munatycooking.com/wp-content/uploads/2020/10/Bread-Gulab-Jamun-Recipe-feature-image.jpg",
+                     "https://img-global.cpcdn.com/recipes/520c48c954ddb877/400x400cq70/photo.jpg"
       ]
     },
     {
@@ -144,7 +144,7 @@
     {
       "dishName": "Chicken Tikka Masala",
       "dishDescription": "A dish consisting of roasted marinated chicken chunks in spiced curry sauce",
-      "dishPrice": "$3",
+      "dishPrice": "$12",
       "dishImages": ["https://www.daringgourmet.com/wp-content/uploads/2019/12/Chicken-Tikka-Masala-10-square.jpg",
         "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Tikka-Masala-min.jpg",
         "https://www.easypeasyfoodie.com/wp-content/uploads/2018/05/IMG_0226-4.jpg"
@@ -192,15 +192,15 @@
 
   ],
 	"italian_dishes": [
-{
-  "dishName": "Margherita Pizza",
-  "dishDescription": "A typical Neapolitan pizza, made with tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
-  "dishPrice": "$10",
-  "dishImages": [ "https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-500x500.jpg",
-    "https://static.toiimg.com/thumb/56868564.cms?imgsize=1948751&width=800&height=800",
-    "https://www.spicesinmydna.com/wp-content/uploads/2020/05/Gluten-Free-Margherita-Pizza-4-500x500.jpg"
-  ]
-},
+      {
+        "dishName": "Margherita Pizza",
+        "dishDescription": "A typical Neapolitan pizza, made with tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
+        "dishPrice": "$10",
+        "dishImages": [ "https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-500x500.jpg",
+          "https://static.toiimg.com/thumb/56868564.cms?imgsize=1948751&width=800&height=800",
+          "https://www.spicesinmydna.com/wp-content/uploads/2020/05/Gluten-Free-Margherita-Pizza-4-500x500.jpg"
+        ]
+      },
       {
         "dishName": "Pepperoni Pizza",
         "dishDescription": "A classic pizza, made with tomatoes, cheese and of course pepperoni slices.",
