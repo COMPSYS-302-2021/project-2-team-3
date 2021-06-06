@@ -63,7 +63,7 @@ public class ListActivityRecAdapter extends RecyclerView.Adapter<ListActivityRec
             Glide.with(this.ctx)
                     .load(items.get(position).getItemImages()[0])
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_launcher_foreground)
                     .into(holder.imgListItem);
 
             holder.cvListItem.setOnClickListener(new View.OnClickListener() {

@@ -58,7 +58,7 @@ class ViewPagerAdapter extends PagerAdapter {
         Glide.with(context)
                 .load(images[position])
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .into(imageView);
 
         // Adding the View

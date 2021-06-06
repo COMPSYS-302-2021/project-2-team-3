@@ -51,7 +51,7 @@ public class TopPicksRecAdapter extends RecyclerView.Adapter<TopPicksRecAdapter.
         Glide.with(this.ctx)
                 .load(topPickItems.get(position).getItemImages()[0])
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.imgTopPicks);
 
         holder.cvTopPicks.setOnClickListener(new View.OnClickListener() {
