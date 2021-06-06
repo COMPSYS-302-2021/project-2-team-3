@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/LargeCardViewProperties"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvListItem"
@@ -9,18 +10,37 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/itemConstraintProperties">
 
-        <ImageView
-            android:id="@+id/img_list_item"
-            style="@style/itemImagesLargeSize"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="2dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/img_list_item"
+                style="@style/itemImagesLargeSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/img_list_item"-->
+<!--            style="@style/itemImagesLargeSize"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtItemName"
             android:text="Item Name"
-            app:layout_constraintStart_toEndOf="@id/img_list_item"
+            app:layout_constraintStart_toEndOf="@id/imgCV"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="20dp"
             android:textSize="40dp"/>
