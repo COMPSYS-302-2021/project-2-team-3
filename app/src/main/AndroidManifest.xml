@@ -13,11 +13,16 @@
         android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.302Projecct2">
-        <activity android:name=".SearchActivity"></activity>
-        <activity android:name=".ListDishes" />
-        <activity android:name=".Homepage" />
-        <activity android:name=".viewItemPage" />
+        <activity android:name=".SearchActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ListDishes"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Homepage"
+            android:screenOrientation="portrait" />
+        <activity android:name=".viewItemPage"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
