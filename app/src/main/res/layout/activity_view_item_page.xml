@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView
+    style="@style/rootInfo"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#e59866"
-    android:padding="5dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/twoMatchParents"
         android:padding="16dp"
         tools:context=".viewItemPage">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/twoWrapContents"
             android:id="@+id/imgSlideCV"
             app:cardBackgroundColor="#f6ddcc"
             android:layout_centerHorizontal="true"
@@ -24,8 +20,7 @@
             android:elevation="10dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/twoWrapContents"
                 android:layout_centerHorizontal="true"
                 app:cardBackgroundColor="#f6ddcc"
                 app:cardCornerRadius="15dp"
@@ -43,8 +38,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/twoWrapContents"
             app:cardBackgroundColor="#f6ddcc"
             android:layout_below="@id/imgSlideCV"
             android:id="@+id/cvInfo"
@@ -54,37 +48,26 @@
             app:cardElevation="10dp">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+               style="@style/twoWrapContents">
 
                 <TextView
+                    style="@style/cardTextViewStyle"
                     android:id="@+id/ItemDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Description"
-                    android:textSize="20dp"
-                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:layout_alignParentStart="true"
                     android:layout_below="@+id/ItemTitle"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
+                    style="@style/cardTextViewStyle"
                     android:id="@+id/ItemTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="Item Name"
                     android:gravity="center"
-                    android:textSize="40dp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
-
-
-
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
 
             </RelativeLayout>
 
@@ -102,6 +85,7 @@
             android:text="Buy"
             android:textColor="@color/black"
             android:backgroundTint="#ff5533"/>
+
         <TextView
             android:id="@+id/ItemPrice"
             android:layout_width="wrap_content"
